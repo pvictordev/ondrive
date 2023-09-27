@@ -18,9 +18,13 @@ The Ondrive website is built using the following technologies:
 Ondrive offers the following features:
 
 1. **Wide Selection of Cars**: We provide a diverse fleet of vehicles to suit your every need, from compact cars for city adventures to spacious SUVs for family road trips. You'll find the perfect ride for any occasion.
+   
 2. **Real-Time Availability**: Our website connects to our car rental database in real-time, ensuring that you have access to the latest information about car availability, rental rates, and special deals. No more guessing if your desired car is available.
+   
 3. **Easy Booking**: We've made it incredibly simple to book a car online. With just a few clicks, you can select your preferred car, choose rental dates, and make a secure reservation. You'll receive an instant confirmation, saving you time and effort.
+   
 4. **Search Functionality**: Ondrive user-friendly search feature allows you to find the ideal car quickly. You can search by location, car type, rental duration, or even specific car models. It's all about convenience and customization.
+   
 5. **Comprehensive Details**: Ondrive provides comprehensive information about each vehicle, including specifications, features, and rental terms. You'll have all the details you need to make an informed choice.
 
    
