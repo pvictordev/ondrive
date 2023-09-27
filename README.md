@@ -9,7 +9,7 @@ Ondrive is an online platform that allows users to rent cars for personal or bus
 **Live Demo**: [Ondrive](#)
 
 ## Technologies Used
-The Coindom website is built using the following technologies:
+The Ondrive website is built using the following technologies:
 - **React**
 - **Chakra UI**
 - **React Router**
