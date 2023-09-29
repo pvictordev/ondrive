@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Testimonials = () => {
+const Navbar = () => {
   return (
     <div>
-      
+      Nav
     </div>
   )
 }
 
-export default Testimonials
+export default Navbar
