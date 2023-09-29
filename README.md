@@ -11,8 +11,8 @@ Ondrive is an online platform that allows users to rent cars for personal or bus
 ## Technologies Used
 The Ondrive website is built using the following technologies:
 - **React**
-- **Chakra UI**
 - **React Router**
+- **Chakra UI**
 
 ## Features
 Ondrive offers the following features:
