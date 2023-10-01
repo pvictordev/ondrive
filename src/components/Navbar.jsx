@@ -1,46 +1,57 @@
 import React from 'react'
-import { VStack, Box, HStack, Flex, Center, Spacer, Text, Image, Link } from '@chakra-ui/react'
+import { VStack, Box, HStack, Flex, Center, Spacer, Text, Image } from '@chakra-ui/react'
+import { Icon } from '@chakra-ui/react'
+import { defineStyleConfig } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
+import { SunIcon } from '@chakra-ui/icons'
 
 const Navbar = () => {
   return (
-    // <nav className='nav'>
-      
-    // </nav>
+    
     <Flex align="center" py={'5'} px={'7'} >
 
     <Center className=' '>
       <Image boxSize={'2.5rem'} src='src/images/ondrive.png' />
-      <Text fontSize='3xl' pl='3' fontWeight={'black'} letterSpacing='wider' color=''>Ondrive</Text>
+      <Text fontSize='3xl' pl='3' fontWeight={'bold'} letterSpacing='tightest' color=''>Ondrive</Text>
     </Center>
 
     <Spacer />
 
       <HStack fontSize={'lg'}>
         <Box p='2'>
-          <a href='#home'>Home</a>
+          <Link to={'/'}>Home</Link>
         </Box>
         <Box p='2'>
-          <a href='#about'>About</a>
+          <Link to={'/about'}>About</Link>
         </Box>
         <Box p='2'>
-          <a href='#projects'>Projects</a>
+          <Link to={'/cars'}>Cars</Link>
         </Box>
         <Box p='2'>
-          <a href='#contact'>Contact</a>
+          <Link to={'/prices'}>Prices</Link>
+        </Box>
+        <Box p='2'>
+          <Link to={'/team'}>Team</Link>
+        </Box>
+        <Box p='2'>
+          <Link to={'/testimonials'}>Testimonials</Link>
+        </Box>
+        <Box p='2'>
+          <Link to={'/contact'}>Contact</Link>
         </Box>
       </HStack>
 
     <Spacer />
 
     <HStack>
-        <Box p='2' border='4px'>
-          <Link style={{ textDecoration: "none" }} href='#home'>Sign In</Link>
+        <Box p='2' border='2px' borderRadius='xl'>
+          <Link borderRadius='xl' style={{ textDecoration: "none" }} href='#home'>Sign In</Link>
         </Box>
-        <Box p='2' border='4px'>
+        <Box p='2' border='2px' borderRadius='xl'>
         <Link style={{ textDecoration: "none" }} href='#home'>Log in </Link>
         </Box>
         <Box p='2'>
-          <a href='#home'>Theme</a>
+        <SunIcon/>
         </Box>
     </HStack>
 
