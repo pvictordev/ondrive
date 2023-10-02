@@ -1,9 +1,11 @@
 import React from 'react'
 
+
+
 const BookRide = () => {
   return (
     <div>
-      Book Ride
+      BookRide
     </div>
   )
 }

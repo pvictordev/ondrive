@@ -76,10 +76,10 @@ const Footer = () => {
                 }}
               />
               <IconButton
-                bg={useColorModeValue('green.400', 'green.800')}
+                bg={useColorModeValue('red.400', 'red.800')}
                 color={useColorModeValue('white', 'gray.800')}
                 _hover={{
-                  bg: 'green.600',
+                  bg: 'red.600',
                 }}
                 aria-label="Subscribe"
                 icon={<BiMailSend />}
