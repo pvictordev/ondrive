@@ -5,6 +5,7 @@ import RentSteps from '../components/RentSteps'
 import Vehicles from '../components/Vehicles'
 import Offer from '../components/Offer'
 import Testimonials from '../components/Testimonials'
+import Faq from '../components/Faq'
 import Footer from '../components/Footer'
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
     <Vehicles/>
     <Offer/>
     <Testimonials/>
+    <Faq/>
     <Footer/>
   </>
   )

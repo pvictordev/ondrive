@@ -3,9 +3,8 @@ import { ReactElement } from 'react'
 import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react'
 import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc'
 import { BiSolidLogIn, } from 'react-icons/bi'
-import { AiFillCar, } from 'react-icons/ai'
-
-
+import { AiFillCar, } from 'react-icons/ai' 
+import { MdOutlineContactSupport, } from 'react-icons/md'
 
 const Feature = ({ title, text, icon }) => {
     return (
@@ -41,8 +40,8 @@ const RentSteps = () => {
                 text={'We offers a big range of vehicles for all your driving needs. We have the perfect car to meet your needs'}
             />
             <Feature
-                icon={<Icon as={FcAssistant} w={10} h={10} />}
-                title={'Contact Operator'}
+                icon={<Icon as={MdOutlineContactSupport} w={10} h={10} />}
+                title={'Contact operator'}
                 text={'Our knowledgeable and friendly operators are always ready to help with any questions or concerns'}
             />
         </SimpleGrid>
