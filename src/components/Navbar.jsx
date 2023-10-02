@@ -55,9 +55,6 @@ const Navbar = () => {
           <Link to={'/team'}>Team</Link>
         </Box>
         <Box p='2'>
-          <Link to={'/testimonials'}>Testimonials</Link>
-        </Box>
-        <Box p='2'>
           <Link to={'/contact'}>Contact</Link>
         </Box>
       </HStack>
@@ -106,9 +103,6 @@ const Navbar = () => {
               </ListItem>
               <ListItem>
                 <Link to="/team">Team</Link>
-              </ListItem>
-              <ListItem>
-                <Link to="/testimonials">Testimonials</Link>
               </ListItem>
               <ListItem>
                 <Link to="/contact">Contact</Link>
