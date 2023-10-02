@@ -44,10 +44,10 @@ const Navbar = () => {
     <Spacer />
 
     <HStack>
-        <Box p='2' border='2px' borderRadius='xl'>
-          <Link borderRadius='xl' style={{ textDecoration: "none" }} href='#home'>Sign In</Link>
+        <Box p='2' border='2px' borderColor={''} borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
+          <Link borderRadius='xl' style={{ textDecoration: "none" }} href='#home'>Sign in</Link>
         </Box>
-        <Box p='2' border='2px' borderRadius='xl'>
+        <Box p='2' border='2px' borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
         <Link style={{ textDecoration: "none" }} href='#home'>Log in </Link>
         </Box>
         <Box p='2'>
