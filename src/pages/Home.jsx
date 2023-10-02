@@ -8,10 +8,6 @@ import {
   Text,
   Button,
   Image,
-  Icon,
-  IconButton,
-  createIcon,
-  useColorModeValue,
 } from '@chakra-ui/react'
 
 export default function Home() {
