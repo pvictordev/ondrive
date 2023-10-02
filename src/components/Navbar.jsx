@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const { colorMode, toggleColorMode } = useColorMode()
 
-  const [isLargerThanMobile] = useMediaQuery('(min-width: 975px)')
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 890px)')
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
@@ -32,7 +32,7 @@ const Navbar = () => {
   return (  
   <Flex align="center" py={'5'} px={'7'} >
 
-    <Center className=' '>
+    <Center>
       <Image boxSize={'2.5rem'} src='src/images/ondrive.png' />
       <Text fontSize='3xl' pl='3' fontWeight={'extrabold'} letterSpacing='tightest' color=''>Ondrive</Text>
     </Center>
