@@ -11,7 +11,7 @@ import { VStack, Box, HStack, Flex, Center, Spacer, Text, Image,  useMediaQuery,
 import { Icon } from '@chakra-ui/react'
 import { defineStyleConfig } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { SunIcon,MoonIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons'
 
 const Navbar = () => {
 
