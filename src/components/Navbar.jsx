@@ -1,5 +1,5 @@
 import React from 'react'
-import { VStack, Box, HStack, Flex, Center, Spacer, Text, Image,  useMediaQuery, IconButton,
+import { VStack, Box, HStack, Flex, Center, Spacer, Text, Image,  useMediaQuery, IconButton, useColorMode, Button, 
   Drawer,
   DrawerOverlay,
   DrawerContent,
@@ -11,9 +11,12 @@ import { VStack, Box, HStack, Flex, Center, Spacer, Text, Image,  useMediaQuery,
 import { Icon } from '@chakra-ui/react'
 import { defineStyleConfig } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { SunIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { SunIcon,MoonIcon, HamburgerIcon } from '@chakra-ui/icons'
 
 const Navbar = () => {
+
+  const { colorMode, toggleColorMode } = useColorMode()
+
   const [isLargerThanMobile] = useMediaQuery('(min-width: 975px)')
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -31,14 +34,14 @@ const Navbar = () => {
 
     <Center className=' '>
       <Image boxSize={'2.5rem'} src='src/images/ondrive.png' />
-      <Text fontSize='3xl' pl='3' fontWeight={'bold'} letterSpacing='tightest' color=''>Ondrive</Text>
+      <Text fontSize='3xl' pl='3' fontWeight={'extrabold'} letterSpacing='tightest' color=''>Ondrive</Text>
     </Center>
 
     {isLargerThanMobile ? (
     <>
     <Spacer />
 
-      <HStack fontSize={'lg'}>
+      <HStack fontSize={'lg'} fontWeight={'semibold'}>
         <Box p='2'>
           <Link to={'/'}>Home</Link>
         </Box>
@@ -62,14 +65,14 @@ const Navbar = () => {
     <Spacer />
 
     <HStack>
-        <Box p='2' border='2px' borderColor={''} borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
+        <Box p='2' borderColor={''} borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
           <Link borderRadius='xl' style={{ textDecoration: "none" }} href='#home'>Sign in</Link>
         </Box>
-        <Box p='2' border='2px' borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
+        <Box p='2' borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
         <Link style={{ textDecoration: "none" }} href='#home'>Log in </Link>
         </Box>
         <Box p='2'>
-        <SunIcon/>
+        <Button onClick={toggleColorMode}> {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}</Button>
         </Box>
     </HStack>
       
@@ -112,7 +115,7 @@ const Navbar = () => {
         </DrawerContent>
       </DrawerOverlay>
     </Drawer>
-    <SunIcon/>
+    <Button onClick={toggleColorMode}> {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}</Button>
   </Box>
   )}
 
