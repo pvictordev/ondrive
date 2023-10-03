@@ -1,6 +1,7 @@
 import React from 'react'
 import TeamMember from '../Data/TeamMember'
 import TeamCard from '../components/TeamCard'
+import { Grid, useMediaQuery  } from '@chakra-ui/react'
 
 const Team = () => {
   const cards = TeamMember.map(member => {
@@ -12,8 +13,16 @@ const Team = () => {
     )
   })
   return (
-    <div>{cards}</div>
+    <>
+    Team adress
+    <Grid 
+    templateColumns='repeat(3,1fr)'
     
+    p={50} 
+    >
+      {cards}
+    </Grid>
+    </>
   )
 }
 

@@ -31,8 +31,9 @@ import {LiaFacebook} from 'react-icons/lia';
 const Contact = () => {
   return (
     <>
+    Contact adress
       <Container  maxW="full" mt={0} centerContent overflow="hidden">
-      <div>contact adress</div>
+      
       <Flex align={'baseline'}>
         <div>need additional info?</div>
 
