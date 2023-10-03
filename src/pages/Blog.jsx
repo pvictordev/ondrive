@@ -48,6 +48,8 @@ const BlogAuthor = (props) => {
 
 const Blog = () => {
   return (
+    <>
+    <div>Blog adress</div>
     <Container maxW={'7xl'} p="12">
       <Heading as="h1">Our Blog</Heading>
       <Box
@@ -245,7 +247,7 @@ const Blog = () => {
         </Box>
       </Box>
     </Container>
-
+    </>
   )
 }
 
