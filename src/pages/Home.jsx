@@ -5,7 +5,7 @@ import RentSteps from '../components/RentSteps'
 import Vehicles from '../components/Vehicles'
 import Offer from '../components/Offer'
 import Testimonials from '../components/Testimonials'
-import Faq from '../components/Faq'
+import Faq from '../components/Faq' 
 
 const Home = () => {
   return (

@@ -1,65 +1,142 @@
 import React from 'react'
 import {
   Box,
-  chakra,
   Flex,
   SimpleGrid,
   Stat,
   StatLabel,
   StatNumber,
   useColorModeValue,
+  Text,
+  Stack,
+  Container,   
+  Heading,
+  StackDivider,
+  Icon,
+  useColorMode,
+  Image,
+ 
 } from '@chakra-ui/react'
-import { ReactNode } from 'react'
 import { BsPerson, BsPeople } from 'react-icons/bs'
-import { FiServer } from 'react-icons/fi'
 import { GoLocation } from 'react-icons/go'
+import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5'
+
+// function StatsCard(props) {
+//   const { title, stat, icon } = props
+//   return (
+//     <Stat
+//       px={{ base: 2, md: 4 }}
+//       py={'5'}
+//       shadow={'xl'}
+//       border={'1px solid'}
+//       borderColor={useColorModeValue('gray.800', 'gray.500')}
+//       rounded={'lg'}>
+//       <Flex justifyContent={'space-between'}>
+//         <Box pl={{ base: 2, md: 4 }}>
+//           <StatLabel fontWeight={'medium'} isTruncated>
+//             {title}
+//           </StatLabel>
+//           <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
+//             {stat}
+//           </StatNumber>
+//         </Box>
+//         <Box
+//           my={'auto'}
+//           color={useColorModeValue('gray.800', 'gray.200')}
+//           alignContent={'center'}>
+//           {icon}
+//         </Box>
+//       </Flex>
+//     </Stat>
+//   )
+// }
+
+const Feature = ({ text, icon, iconBg }) => {
+  return (
+    <Stack direction={'row'} align={'center'}>
+      <Flex w={8} h={8} align={'center'} justify={'center'} rounded={'full'} bg={iconBg}>
+        {icon}
+      </Flex>
+      <Text fontWeight={600}>{text}</Text>
+    </Stack>
+  )
+}
 
 const About = () => {
 
-  function StatsCard(props) {
-    const { title, stat, icon } = props
-    return (
-      <Stat
-        px={{ base: 2, md: 4 }}
-        py={'5'}
-        shadow={'xl'}
-        border={'1px solid'}
-        borderColor={useColorModeValue('gray.800', 'gray.500')}
-        rounded={'lg'}>
-        <Flex justifyContent={'space-between'}>
-          <Box pl={{ base: 2, md: 4 }}>
-            <StatLabel fontWeight={'medium'} isTruncated>
-              {title}
-            </StatLabel>
-            <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
-              {stat}
-            </StatNumber>
-          </Box>
-          <Box
-            my={'auto'}
-            color={useColorModeValue('gray.800', 'gray.200')}
-            alignContent={'center'}>
-            {icon}
-          </Box>
-        </Flex>
-      </Stat>
-    )
-  }
+
   return (
- 
-    <>
-    <Box>About adress</Box>
-    <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
-      <chakra.h1 textAlign={'center'} fontSize={'4xl'} py={10} fontWeight={'bold'}>
+    <div>
+    <div>About adress</div>
+
+    <Container maxW={'5xl'} py={12}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+        <Stack spacing={4}>
+          <Text
+            textTransform={'uppercase'}
+            color={'red.400'}
+            fontWeight={600}
+            fontSize={'sm'}
+            bg={useColorModeValue('red.100', 'red.800')}
+            p={2}
+            alignSelf={'flex-start'}
+            rounded={'md'}>
+            About us
+          </Text>
+          <Heading>Ondrive is a big car rental company</Heading>
+          <Text color={'gray.500'} fontSize={'lg'}>
+          The shimmering stars danced in the velvety night sky, casting their silvery glow upon the world below. A gentle breeze whispered through the trees, rustling their leaves in a secret conversation. In the distance, the faint hum of a distant city could be heard, a testament to the ceaseless rhythm of human life. And in that moment, as the universe unfolded its mysteries, a sense of wonder and awe filled the heart."
+          Feel free to let me know if you'd like more random text or have any specific requests!
+          </Text>
+          <Stack
+            spacing={4}
+            divider={
+              <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
+            }>
+            <Feature
+              icon={<Icon as={BsPerson} color={'yellow.500'} w={5} h={5} />}
+              iconBg={useColorModeValue('yellow.100', 'yellow.900')}
+              text={'More than 500 emoloyees'}
+            />
+            <Feature
+              icon={<Icon as={BsPeople} color={'green.500'} w={5} h={5} />}
+              iconBg={useColorModeValue('green.100', 'green.900')}
+              text={'25,000+ Happy clients'}
+            />
+            <Feature
+              icon={<Icon as={GoLocation} color={'purple.500'} w={5} h={5} />}
+              iconBg={useColorModeValue('purple.100', 'purple.900')}
+              text={'7 Headquaters '}
+            />
+          </Stack>
+        </Stack>
+        <Flex>
+          <Image
+            rounded={'md'}
+            alt={'feature image'}
+            src={
+              'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+            }
+            objectFit={'cover'}
+          />
+        </Flex>
+      </SimpleGrid>
+    </Container>
+
+    {/* <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+      <Text textAlign={'center'} fontSize={'4xl'} py={10} fontWeight={'bold'}>
         Our company is expanding, you could be too.
-      </chakra.h1>
+      </Text>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard title={'Employers'} stat={'1000'} icon={<BsPerson size={'3em'} />} />
         <StatsCard title={'Happy Clients'} stat={'25,000'} icon={<BsPeople size={'3em'} />} />
         <StatsCard title={'Headquarters'} stat={'7'} icon={<GoLocation size={'3em'} />} />
       </SimpleGrid>
-    </Box>
-    </>
+    </Box> */}
+
+
+   
+    </div>
   )
 }
 
