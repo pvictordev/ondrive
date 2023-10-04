@@ -17,6 +17,8 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import {
   MdPhone,
@@ -32,13 +34,14 @@ const Contact = () => {
   return (
     <>
     Contact adress
-      <Container  maxW="full" mt={0} centerContent overflow="hidden">
+      <Container maxW="full" mt={0} centerContent overflow="hidden" >
       
       <Flex align={'baseline'}>
         <div>need additional info?</div>
 
         <Box
-          bg="white"
+          // bg='white'
+          bg={useColorModeValue('white', 'gray.800')}
           color="black"
           borderRadius="lg"
           border={'4px solid red'}
@@ -120,7 +123,7 @@ const Contact = () => {
                 </Box>
               </WrapItem>
               <WrapItem>
-                <Box bg="white" borderRadius="lg">
+                <Box borderRadius="lg" bg={useColorModeValue('white', 'gray.800')}>
                   <Box m={8} color="">
                     <VStack spacing={5}>
                       <FormControl id="name">
