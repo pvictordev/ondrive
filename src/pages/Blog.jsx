@@ -47,6 +47,8 @@ const BlogAuthor = (props) => {
 }
 
 const Blog = () => {
+
+  
   return (
     <>
     <div>Blog adress</div>

@@ -10,6 +10,8 @@ export default [
         price: 600,
         rating: 5,
         numReviews: 20,
+        transmission:'Manual',
+        fuel:'Petrol',
     },   
     {
         id:2,
@@ -20,6 +22,8 @@ export default [
         price: 400,
         rating: 5,
         numReviews: 15,
+        transmission:'Automatic',
+        fuel:'Petrol',
     },
       {
         id:3,
@@ -30,6 +34,8 @@ export default [
         price: 90,
         rating: 4,
         numReviews: 40,
+        transmission:'Automatic',
+        fuel:'Diesel',
       },
       {
         id:4,
@@ -40,6 +46,8 @@ export default [
         price: 85,
         rating: 4.5,
         numReviews: 30,
+        transmission:'Automatic',
+        fuel:'Petrol',
       },
       {
         id:5,
@@ -50,6 +58,8 @@ export default [
         price: 45,
         rating: 3,
         numReviews: 25,
+        transmission:'Automatic',
+        fuel:'Diesel',
       },
       {
         id:6,
@@ -61,35 +71,35 @@ export default [
         rating: 4,
         numReviews: 75,
       },
-      {
-        id:7,
-        isNew: false,
-        imageURL:
-          'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        name: 'Peugeot 206 ',
-        price: 35,
-        rating: 2.5,
-        numReviews: 60,
-      },
-      {
-        id:8,
-        isNew: false,
-        imageURL:
-          'https://images.unsplash.com/photo-1594611402076-57d584566ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        name: 'Honda Civic Hybrid',
-        price: 35,
-        rating: 4,
-        numReviews: 50,
-      },
-      {
-        id:9,
-        isNew: false,
-        imageURL:
-          'https://images.unsplash.com/photo-1664988135469-6094dc15d8e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        name: 'VAZ-2103',
-        price: 35,
-        rating: 5,
-        numReviews: 45,
-      },
+      // {
+      //   id:7,
+      //   isNew: false,
+      //   imageURL:
+      //     'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      //   name: 'Peugeot 206 ',
+      //   price: 35,
+      //   rating: 2.5,
+      //   numReviews: 60,
+      // },
+      // {
+      //   id:8,
+      //   isNew: false,
+      //   imageURL:
+      //     'https://images.unsplash.com/photo-1594611402076-57d584566ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      //   name: 'Honda Civic Hybrid',
+      //   price: 35,
+      //   rating: 4,
+      //   numReviews: 50,
+      // },
+      // {
+      //   id:9,
+      //   isNew: false,
+      //   imageURL:
+      //     'https://images.unsplash.com/photo-1664988135469-6094dc15d8e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      //   name: 'VAZ-2103',
+      //   price: 35,
+      //   rating: 5,
+      //   numReviews: 45,
+      // },
     
 ]
