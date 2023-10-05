@@ -10,6 +10,7 @@ import {
 import CarsList from '../Data/CarsList';
 
 const VehiclesBox = (props) => {
+  console.log(props.id)
   
   return (
     <>

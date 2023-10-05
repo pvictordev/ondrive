@@ -91,12 +91,12 @@ const Vehicles = () => {
           </Box>
 
           <Box className="pick-box__car">
-            {active == 'first' && '1'}
-            {active == 'second' && '2'}
-            {active == 'third' && '3'}
-            {active == 'fourth' && '4'}
-            {active == 'fiveth' && '5'}
-            {active == 'sixth' && '6'}
+            {active == 'first' && <VehiclesBox {...CarsList[0]} />}
+            {active == 'second' && <VehiclesBox {...CarsList[1]} />}
+            {active == 'third' && <VehiclesBox {...CarsList[2]} />}
+            {active == 'fourth' && <VehiclesBox {...CarsList[3]} />}
+            {active == 'fiveth' &&  <VehiclesBox {...CarsList[4]} />}
+            {active == 'sixth' && <VehiclesBox {...CarsList[5]} />}
 
           </Box>
 
