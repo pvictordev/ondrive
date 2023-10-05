@@ -6,6 +6,9 @@ import {
   Heading,
   Text,
   Stack,
+  Flex,
+  Grid,
+  Center,
 
 } from "@chakra-ui/react";
 import CarsList from '../Data/CarsList';
@@ -55,41 +58,56 @@ const Vehicles = () => {
             next adventure or business trip
           </Text>
         </Box>
-        <Box className="pick-container__car-content">
-          <Box className="pick-box">
+        <Grid className="pick-container__car-content" gridTemplateColumns={'repeat(3,1fr)'} >
+          <Flex className="pick-box" flexDirection={'column'}>
             <Button
               onClick={() => setActive("first")}
             >
-              {'1'}
+              {CarsList[0].name}
             </Button>
             <Button
               onClick={() => setActive("second")}
              
             >
-              {'2'}
+              {CarsList[1].name}
+              
             </Button>
             <Button
               onClick={() => setActive("third")}
             >
-             {'3'}
+              {CarsList[2].name}
+
             </Button>
             <Button
               onClick={() => setActive("fourth")}
             >
-             {'4'}
+              {CarsList[3].name}
+
             </Button>
             <Button
               onClick={() => setActive("fiveth")}
             >
-              {'5'}
+              {CarsList[4].name}
+              
             </Button>
             <Button
                onClick={() => setActive("sixth")}
             >
-              {'6'}
+              {CarsList[5].name}
+              
             </Button>
-          </Box>
+          </Flex>
+          <Center>
+          <Box className='pick-img'>
+            {active == 'first' && <img src={CarsList[0].imageURL} alt="" />}
+            {active == 'second' && <img src={CarsList[1].imageURL} alt="" />}
+            {active == 'third' && <img src={CarsList[2].imageURL} alt="" />}
+            {active == 'fourth' && <img src={CarsList[3].imageURL} alt="" />}
+            {active == 'fiveth' && <img src={CarsList[4].imageURL} alt="" />}
+            {active == 'sixth' && <img src={CarsList[5].imageURL} alt="" />}
 
+          </Box>
+          </Center>
           <Box className="pick-box__car">
             {active == 'first' && <VehiclesBox {...CarsList[0]} />}
             {active == 'second' && <VehiclesBox {...CarsList[1]} />}
@@ -100,7 +118,7 @@ const Vehicles = () => {
 
           </Box>
 
-        </Box>
+        </Grid>
 
       </Box>
     </Container>
