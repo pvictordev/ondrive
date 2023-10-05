@@ -7,12 +7,12 @@ import {
   Text,
   Stack,
 } from "@chakra-ui/react";
+import CarsList from '../Data/CarsList';
 
 const VehiclesBox = (props) => {
   
   return (
     <>
-  
     <Stack alignContent={'center'}>
     <Text>{props.name}</Text>
     <Stack direction="column">

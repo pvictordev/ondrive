@@ -5,22 +5,38 @@ import {
   Container,
   Heading,
   Text,
+  Stack,
+
 } from "@chakra-ui/react";
 import CarsList from '../Data/CarsList';
-import VehicleBox from './VehiclesBox';
+import VehiclesBox from './VehiclesBox';
 
 const Vehicles = () => {
 
   const [active, setActive] = useState("first");
 
-  const vehicles = CarsList.map(car => {
-    return(
-      <VehicleBox
-        key={car.id}
-        {...car}
-      />
-    )
-  })
+  // const vehicles = CarsList.map(car => {
+  //   return(
+  //     // <Stack alignContent={'center'} key={car.id}>
+  //     // <Text>{car.name}</Text>
+  //     //   <Stack direction="column">
+  //     //     <Text>{car.model}</Text>
+  //     //     <Text>{car.mark}</Text>
+  //     //     <Text>{car.year}</Text>
+  //     //     <Text>{car.doors}</Text>
+  //     //     <Text>{car.transmission}</Text>
+  //     //     <Text>{car.fuel}</Text>
+  //     //     <Text>${car.price}</Text>
+  //     //     <Text>{car.year}</Text>
+  //     //   </Stack>
+  //     // </Stack>
+
+  //     <VehiclesBox
+  //       key={car.id}
+  //       {...car}
+  //     />
+  //   )
+  // })
   
   
   return (
@@ -53,29 +69,35 @@ const Vehicles = () => {
               {'2'}
             </Button>
             <Button
-              
+              onClick={() => setActive("third")}
             >
              {'3'}
             </Button>
             <Button
-              
+              onClick={() => setActive("fourth")}
             >
              {'4'}
             </Button>
             <Button
-             
+              onClick={() => setActive("fiveth")}
             >
               {'5'}
             </Button>
             <Button
-              
+               onClick={() => setActive("sixth")}
             >
               {'6'}
             </Button>
           </Box>
 
           <Box className="pick-box__car">
-            {vehicles}
+            {active == 'first' && '1'}
+            {active == 'second' && '2'}
+            {active == 'third' && '3'}
+            {active == 'fourth' && '4'}
+            {active == 'fiveth' && '5'}
+            {active == 'sixth' && '6'}
+
           </Box>
 
         </Box>
