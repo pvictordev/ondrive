@@ -10,23 +10,20 @@ import {
 import CarsList from '../Data/CarsList';
 
 const VehiclesBox = (props) => {
-  console.log(props.id)
+
   
   return (
-    <>
-    <Stack alignItems={'center'}>
-      <Stack direction="column">
-        <Text>{props.model}</Text>
-        <Text>{props.mark}</Text>
-        <Text>{props.year}</Text>
-        <Text>{props.doors}</Text>
-        <Text>{props.transmission}</Text>
-        <Text>{props.fuel}</Text>
-        <Text>${props.price}</Text>
-        <Text>{props.year}</Text>
+    <Box>
+      <Stack direction="column" fontSize={'xl'}>
+        <Text  border={'2px solid '} borderRadius={'xl'} textAlign={'center'} >${props.price}/ Per day</Text>
+        <Text p={'2'} borderBottom={'2px solid '}>Model: {props.model}</Text>
+        <Text p={'2'} borderBottom={'2px solid '}> Mark: {props.mark}</Text>
+        <Text p={'2'}  borderBottom={'2px solid '}>Year: {props.year}</Text>
+        <Text p={'2'}  borderBottom={'2px solid '}>Doors: {props.doors}</Text>
+        <Text p={'2'}  borderBottom={'2px solid '}>Transmission: {props.transmission}</Text>
+        <Text p={'2'}  borderBottom={'2px solid '}>Fuel: {props.fuel}</Text>
       </Stack>
-    </Stack>
-  </>
+  </Box>
   )
 }
 

@@ -1,15 +1,17 @@
 import React from 'react'
 
+
 export default [
     {
         id:1,
         isNew: true,
         imageURL:
         'https://images.unsplash.com/photo-1583425583779-27e82172cf05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=800',
+        imagePNG:'src/images/porsche.png',
         name: 'Porsche 911 GT2 RS',
         model: 'Porsche',
         mark:'911 GT2 RS',
-        transmission:'Manual',
+        transmission:'Automatic',
         fuel:'Petrol',
         doors:2,
         year: 2020,
@@ -22,6 +24,7 @@ export default [
         isNew: true,
         imageURL:
         'https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        imagePNG:'src/images/mclaren.png',
         name: 'McLaren 720S',
         model: 'McLaren',
         mark:'720s',
@@ -37,15 +40,16 @@ export default [
         id:3,
         isNew: false,
         imageURL:
-          'https://images.unsplash.com/photo-1683791737337-27c940097598?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        name: 'BMW 530d',
+          'https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        imagePNG:'src/images/bmw.png',
+        name: 'BMW 5 Series',
         model: 'BMW',
-        mark:'5 series',
+        mark:'5 Series Coupe',
         transmission:'Automatic',
         fuel:'Diesel',
         doors:4,
-        year: 2019,
-        price: 90,
+        year: 2017,
+        price: 100,
         rating: 4,
         numReviews: 40,
       },
@@ -54,6 +58,7 @@ export default [
         isNew: false,
         imageURL:
           'https://images.unsplash.com/photo-1686690397871-7bfd5e6088b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        imagePNG:'src/images/audi.png',
         name: 'Audi A7',
         model: 'Audi',
         mark:'A7',
@@ -71,6 +76,7 @@ export default [
         isNew: false,
         imageURL:
           'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        imagePNG:'src/images/vw.png',
         name: 'VW Polo',
         model: 'Volkswagen',
         mark:'Polo',
@@ -88,6 +94,7 @@ export default [
         isNew: false,
         imageURL:
           'https://images.unsplash.com/photo-1622653902334-ae450576f128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        imagePNG:'src/images/renault.png',
         name: 'Renault Megane Sport',
         model: 'Renault',
         mark:'Megane Sport',
