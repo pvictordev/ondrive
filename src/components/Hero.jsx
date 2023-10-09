@@ -8,6 +8,7 @@ import {
   Text,
   Button,
   Image,
+  useColorModeValue,
 } from '@chakra-ui/react'
 
 export default function Hero() {
@@ -29,7 +30,8 @@ export default function Hero() {
               <Text
                 as={'span'}
                 position={'relative'}
-                
+                fontSize={'6xl'}
+                fontWeight={'bold'}
               >
                 <Text as={'span'} color={'red'}>Save</Text> your money with our car <Text as={'span'} color={'red'}>rental</Text>
               </Text>
@@ -43,8 +45,8 @@ export default function Hero() {
                 fontWeight={'normal'}
                 px={6}
                 colorScheme={'red'}
-                bg={'red.400'}
-                _hover={{ bg: 'red.500' }}
+                bg={useColorModeValue('red.500', 'red.700')}
+                _hover={{ bg: 'red.600' }}
               >Book ride
               </Button>
               <Button

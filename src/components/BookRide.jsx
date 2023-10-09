@@ -10,23 +10,40 @@ import {
   FormLabel, 
   FormControl,
   Select,
+  useColorModeValue,
 } from '@chakra-ui/react'
 
 import { useToast } from '@chakra-ui/react'
 import {AiFillCar, AiOutlineCalendar} from 'react-icons/ai';
-import{GrLocation} from 'react-icons/gr';
+import{CiLocationOn} from 'react-icons/ci';
 
 
 
 const BookRide = () => {  
  
   return (
-    <Flex className="book-ride" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} border={'2px solid black'} mx={'24'} my={'24'} p={'10'} borderRadius={'xl'} >
+    <Flex className="book-ride" 
+      flexDirection={'column'}
+      justifyContent={'center'} 
+      alignItems={'center'} 
+      // border={'2px solid black'} 
+      m={'24'} p={'10'} 
+      borderRadius={'xl'} 
+      boxShadow={'dark-lg'}
+
+    >
       <Text fontWeight={'bold'} fontSize={'3xl'} mb={'10'}>Book ride</Text>
-      <Grid gridTemplateColumns={'repeat(3,1fr)'} gap={10} w={'full'} alignItems={'center'}>
+      <Grid 
+        gap={10}
+        w={'full'} 
+        alignItems={'flex-end'}
+        templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
+        templateRows={{ base: "repeat(6, 1fr)", lg: "repeat(3, 1fr)", xl: "repeat(2, 1fr)" }}
+        
+      >
 
         <FormControl>
-          <FormLabel display={'flex'} alignItems={'center'} gap={'2'}>Select your car <AiFillCar/></FormLabel>
+          <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={'lg'}>Select your car <AiFillCar/></FormLabel>
           <Select
           id="country"
           name="country"
@@ -42,7 +59,7 @@ const BookRide = () => {
         </FormControl>
         
         <FormControl>
-        <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'}>Pick place <GrLocation/></FormLabel>
+        <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'} fontSize={'lg'}>Pick place <CiLocationOn/></FormLabel>
           <Select
           id="country"
           name="country"
@@ -60,7 +77,7 @@ const BookRide = () => {
         </FormControl>
 
         <FormControl>
-          <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'}>Drop place <GrLocation/></FormLabel>
+          <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'} fontSize={'lg'}>Drop place <CiLocationOn/></FormLabel>
           <Select
           id="country"
           name="country"
@@ -78,21 +95,27 @@ const BookRide = () => {
         </FormControl>
 
         <FormControl>
-        <FormLabel display={'flex'} alignItems={'center'} gap={'2'}>Pick date <AiOutlineCalendar/></FormLabel>
+        <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={'lg'}>Pick date <AiOutlineCalendar/></FormLabel>
 
           <Input type='date'/>
           
         </FormControl>
 
         <FormControl>
-        <FormLabel display={'flex'} alignItems={'center'} gap={'2'}>Drop date <AiOutlineCalendar/></FormLabel>
+        <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={'lg'}>Drop date <AiOutlineCalendar/></FormLabel>
 
           <Input type='date'/>
         </FormControl>
 
-        <Box>
-        <Button>Search</Button>
-        </Box>
+        <Button 
+          fontSize={'lg'}
+          bg={useColorModeValue('red.500', 'red.700')}
+          color={'white'}
+          _hover={{
+            bg: 'red.600',
+          }}
+        >Search</Button>
+        
       </Grid>
     </Flex>
   )

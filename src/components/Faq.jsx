@@ -17,15 +17,17 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 const Faq = () => {
   return (
     <Flex
-    minH={'100vh'}
-    align={'center'}
-    justify={'center'}
-    flexDirection={'column'}
-    bg={useColorModeValue('gray.50', 'gray.800')}>
+      minH={'100vh'}
+      align={'center'}
+      justify={'center'}
+      flexDirection={'column'}
+      bg={useColorModeValue('gray.50', 'gray.800')}
+      rowGap={10}
+    >
 
-    <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
+    <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}  rowGap={10}>
       <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
-        What we offer
+        Frecvently Asked Questions
       </Heading>
       <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
       Discover the best deals you'll ever find with our unbeatable offers. We're dedicated to providing you with the best value for your money, so you can enjoy top-quality services and products without breaking the bank. Our deals are designed to give you the ultimate renting experience, so don't miss out on your chance to save big.

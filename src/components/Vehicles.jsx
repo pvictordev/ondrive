@@ -22,7 +22,7 @@ const Vehicles = () => {
 
   
   return (
-    <Box as="section" className="pick-section">
+    <Box as="section" className="pick-section" p={24}>
       {/* maxW="container.lg" */}
     <Container maxW={''} >
       <Box className="pick-container">

@@ -8,7 +8,7 @@ import { MdOutlineContactSupport, } from 'react-icons/md'
 
 const Feature = ({ title, text, icon }) => {
     return (
-      <Stack align={'center'}>
+      <Stack align={'center'} >
         <Flex
           w={16}
           h={16}
@@ -17,18 +17,20 @@ const Feature = ({ title, text, icon }) => {
           color={'white'}
           rounded={'full'}
           bg={'red.500'}
-          mb={1}>
+          mb={1}
+
+          >
           {icon}
         </Flex>
-        <Text fontWeight={600}>{title}</Text>
+        <Text fontWeight={600} fontSize={'xl'}>{title}</Text>
         <Text color={'gray.600'}>{text}</Text>
       </Stack>
     )
   }
 const RentSteps = () => {
   return (
-    <Box py={10} px={14} align={'center'}>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+    <Box p={24} align={'center'}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} columnGap={12}>
             <Feature
                 icon={<Icon as={BiSolidLogIn} w={10} h={10} />}
                 title={'Sign up / Login in'}
