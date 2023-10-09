@@ -15,11 +15,15 @@ import {
   Icon,
   useColorMode,
   Image,
- 
+  
 } from '@chakra-ui/react'
 import { BsPerson, BsPeople } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
+import RentSteps from '../components/RentSteps'
+import HomeRoute from '../components/HomeRoute'
+import Banner from '../components/Banner'
 
 // function StatsCard(props) {
 //   const { title, stat, icon } = props
@@ -66,10 +70,10 @@ const About = () => {
 
 
   return (
-    <div>
-    <div>About adress</div>
+    <Box>
+    <HomeRoute title={'About'}/>
 
-    <Container maxW={'5xl'} py={12}>
+    <Container maxW={'5xl'} my={24}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Text
@@ -123,6 +127,9 @@ const About = () => {
       </SimpleGrid>
     </Container>
 
+    <Banner/> 
+    <RentSteps/>
+
     {/* <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
       <Text textAlign={'center'} fontSize={'4xl'} py={10} fontWeight={'bold'}>
         Our company is expanding, you could be too.
@@ -133,10 +140,10 @@ const About = () => {
         <StatsCard title={'Headquarters'} stat={'7'} icon={<GoLocation size={'3em'} />} />
       </SimpleGrid>
     </Box> */}
-
+    
 
    
-    </div>
+    </Box>
   )
 }
 

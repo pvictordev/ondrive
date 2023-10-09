@@ -10,6 +10,7 @@ import {
   VStack,
   HStack,
   Wrap,
+  Grid,
   WrapItem,
   FormControl,
   FormLabel,
@@ -29,15 +30,23 @@ import {
 } from 'react-icons/md'
 import { BsWhatsapp, BsPerson, BsInstagram } from 'react-icons/bs'
 import {LiaFacebook} from 'react-icons/lia';
+import HomeRoute from '../components/HomeRoute'
+import Banner from '../components/Banner'
+import RentSteps from '../components/RentSteps'
 
 const Contact = () => {
   return (
-    <>
-    Contact adress
-      <Container maxW="full" mt={0} centerContent overflow="hidden" >
+    <Box>
+      <HomeRoute title={'Contact'}/>
+
+      <Container maxW="full" centerContent overflow="hidden" >
       
-      <Flex align={'baseline'}>
-        <div>need additional info?</div>
+      <Flex >
+        {/* <div>need additional info?</div> */}
+        {/* <Box>
+          <Heading>Need Additional Info ?</Heading>
+          <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate blanditiis animi deleniti dignissimos maiores maxime hic perspiciatis sed, incidunt reprehenderit eum a similique ullam nulla aperiam illum enim porro ex?</Text>
+        </Box> */}
 
         <Box
           // bg='white'
@@ -46,7 +55,8 @@ const Contact = () => {
           borderRadius="lg"
           border={'4px solid red'}
           m={{ sm: 4, md: 16, lg: 10 }}
-          p={{ sm: 5, md: 5, lg: 16 }}>
+          p={{ sm: 5, md: 5, lg: 16 }}
+          >
 
             <Box p={4}>
             <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
@@ -166,9 +176,14 @@ const Contact = () => {
             </Wrap>
           </Box>
         </Box>
+
       </Flex>
-    </Container>
-    </>
+
+      </Container>
+
+      <Banner/> 
+      <RentSteps/>
+    </Box>
   )
 }
 

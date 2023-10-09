@@ -7,7 +7,7 @@ import { VStack, Box, HStack, Flex, Center, Spacer, Text, Image,  useMediaQuery,
   DrawerHeader,
   DrawerBody,
   List,
-  ListItem, } from '@chakra-ui/react'
+  ListItem,useColorModeValue } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/react'
 import { defineStyleConfig } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
@@ -65,10 +65,22 @@ const Navbar = () => {
     <Spacer />
 
     <HStack>
-        <Box p='2' borderColor={''} borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
+        <Box p='2'
+            borderColor={''}
+            borderRadius='xl'
+            bg={useColorModeValue('red.500', 'red.700')}
+            _hover={{ bg: 'red.600' }}
+            color={'white'}
+            cursor={'pointer'}>
           <Link borderRadius='xl' style={{ textDecoration: "none" }} href='#home'>Sign in</Link>
         </Box>
-        <Box p='2' borderRadius='xl' backgroundColor={'red'} color={'white'} cursor={'pointer'}>
+        <Box p='2'
+          borderRadius='xl'
+          bg={useColorModeValue('red.500', 'red.700')}
+          _hover={{ bg: 'red.600' }}
+          color={'white'} 
+          cursor={'pointer'}
+        >
         <Link style={{ textDecoration: "none" }} href='#home'>Log in </Link>
         </Box>
         <Box p='2'>

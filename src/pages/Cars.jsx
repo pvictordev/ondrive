@@ -1,7 +1,10 @@
 import React from 'react'
 import CarsCard from '../components/CarsCard'
 import CarsList from '../Data/CarsList'
-import { Grid, useMediaQuery  } from '@chakra-ui/react'
+import { Grid, useMediaQuery, Box, Text  } from '@chakra-ui/react'
+import HomeRoute from '../components/HomeRoute'
+import Banner from '../components/Banner'
+import RentSteps from '../components/RentSteps'
 
 
 const Cars = () => {
@@ -16,8 +19,8 @@ const Cars = () => {
   })
   const [isLargerThanMobile] = useMediaQuery('(min-width: 890px)')
   return (
-    <>
-    Cars adress
+    <Box>
+    <HomeRoute title={'Cars'}/>
 
     <Grid 
     templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
@@ -28,8 +31,11 @@ const Cars = () => {
     >
       {cars}
     </Grid>
-  
-    </>
+    
+    <Banner/> 
+    <RentSteps/>
+
+    </Box>
   )
 }
 

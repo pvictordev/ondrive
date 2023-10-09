@@ -10,7 +10,7 @@ import {
   Grid,
   Center,
   background,
-
+  useColorModeValue,
 } from "@chakra-ui/react";
 import CarsList from '../Data/CarsList';
 import VehiclesBox from './VehiclesBox';
@@ -18,8 +18,6 @@ import VehiclesBox from './VehiclesBox';
 const Vehicles = () => {
 
   const [active, setActive] = useState("first");
-  
-
   
   return (
     <Box as="section" className="pick-section" p={24}>
@@ -39,8 +37,11 @@ const Vehicles = () => {
         <Grid className="pick-container__car-content" gridTemplateColumns={'1fr 2fr 1fr'} gap={10} alignItems={'center'} justifyItems={'center'}  >
           <Flex className="pick-box" flexDirection={'column'} gap={4}>
             <Button
+              // color={'white'}
+              // bg={useColorModeValue('red.500', 'red.700')}
+              // _hover={{ bg: 'red.600' }} 
               onClick={() => setActive("first")}
-              isActive={active == 'first'}          
+              isActive={active == 'first'}
             >
               {CarsList[0].name}
             </Button>
@@ -52,6 +53,7 @@ const Vehicles = () => {
               
             </Button>
             <Button
+            
               onClick={() => setActive("third")}
               isActive={active == 'third'}    
             >
@@ -94,7 +96,7 @@ const Vehicles = () => {
           </Box>
       
 
-          <Box className="pick-box__car" border={''}>
+          <Box className="pick-box__car" p={7} border={'1px solid red'} borderRadius={'xl'}>
 
             {active == 'first' && <VehiclesBox {...CarsList[0]} />}
             {active == 'second' && <VehiclesBox {...CarsList[1]} />}

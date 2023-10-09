@@ -45,6 +45,7 @@ export default function Hero() {
                 fontWeight={'normal'}
                 px={6}
                 colorScheme={'red'}
+                color={'white'}
                 bg={useColorModeValue('red.500', 'red.700')}
                 _hover={{ bg: 'red.600' }}
               >Book ride
