@@ -43,8 +43,9 @@ function Rating(props) {
 
 const CarsCard = (props) => {
   return (
-    <Flex alignItems="center" justifyContent="center">
+    <Flex className='CarsCard' alignItems="center" justifyContent="center">
     <Box
+    className='CarsCard__'
     bg={useColorModeValue('white', 'gray.800')}
     maxW="sm"
     borderWidth="1px"
@@ -55,17 +56,17 @@ const CarsCard = (props) => {
         <Circle size="10px" position="absolute" top={2} right={2} bg="red.200" />
     )}
 
-    <Image src={props.imageURL} alt={`Picture of ${props.name}`} roundedTop="lg" />
+    <Image className='CarsCard__img' src={props.imageURL} alt={`Picture of ${props.name}`} roundedTop="lg" />
 
-    <Box p="6">
-        <Box display="flex" alignItems="baseline">
+    <Box className="CarsCard__description" p="6">
+        <Box className='description__badge' display="flex" alignItems="baseline">
         {props.isNew && (
             <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
             New
             </Badge>
         )}
         </Box>
-        <Flex mt="1" justifyContent="space-between" alignContent="center">
+        <Flex className='description__name' mt="1" justifyContent="space-between" alignContent="center">
         <Box
             fontSize="2xl"
             fontWeight="semibold"
@@ -76,7 +77,7 @@ const CarsCard = (props) => {
         </Box>
         </Flex>
 
-        <Flex justifyContent="space-between" alignContent="center">
+        <Flex className="description__price" justifyContent="space-between" alignContent="center">
         <Rating rating={props.rating} numReviews={props.numReviews} />
         <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
             <Box as="span" color={'gray.600'} fontSize="lg">
@@ -86,6 +87,7 @@ const CarsCard = (props) => {
         </Box>
         </Flex>
     </Box>
+
     </Box>
     </Flex>
   )

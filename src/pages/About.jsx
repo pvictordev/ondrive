@@ -70,13 +70,17 @@ const About = () => {
 
 
   return (
-    <Box>
-    <HomeRoute title={'About'}/>
+    <Box className='About'>
 
-    <Container maxW={'5xl'} my={24}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
+    <HomeRoute className='About__title' title={'About'}/>
+
+    <Container className='About__container' maxW={'5xl'} my={24}>
+
+      <SimpleGrid className='container__grid' columns={{ base: 1, md: 2 }} spacing={10}>
+
+        <Stack className="container__text" spacing={4}>
           <Text
+            className='text__badge'
             textTransform={'uppercase'}
             color={'red.400'}
             fontWeight={600}
@@ -87,12 +91,13 @@ const About = () => {
             rounded={'md'}>
             About us
           </Text>
-          <Heading>Ondrive is a big car rental company</Heading>
-          <Text color={'gray.500'} fontSize={'lg'}>
+          <Heading className='text__title'>Ondrive is a big car rental company</Heading>
+          <Text className='text__content' color={'gray.500'} fontSize={'lg'}>
           The shimmering stars danced in the velvety night sky, casting their silvery glow upon the world below. A gentle breeze whispered through the trees, rustling their leaves in a secret conversation. In the distance, the faint hum of a distant city could be heard, a testament to the ceaseless rhythm of human life. And in that moment, as the universe unfolded its mysteries, a sense of wonder and awe filled the heart."
           Feel free to let me know if you'd like more random text or have any specific requests!
           </Text>
           <Stack
+            className='text__features'
             spacing={4}
             divider={
               <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
@@ -114,7 +119,8 @@ const About = () => {
             />
           </Stack>
         </Stack>
-        <Flex>
+
+        <Flex className='container__image'>
           <Image
             rounded={'md'}
             alt={'feature image'}
@@ -124,11 +130,16 @@ const About = () => {
             objectFit={'cover'}
           />
         </Flex>
+
       </SimpleGrid>
     </Container>
 
-    <Banner/> 
-    <RentSteps/>
+    <Banner className='About__banner'
+      title='We have a big background in car rental!' 
+      textColor="Better" 
+      description='than competitors, we have things that they do not'
+     /> 
+    <RentSteps className="About__steps  "/>
 
     {/* <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
       <Text textAlign={'center'} fontSize={'4xl'} py={10} fontWeight={'bold'}>

@@ -16,24 +16,26 @@ import {
 import { useToast } from '@chakra-ui/react'
 import {AiFillCar, AiOutlineCalendar} from 'react-icons/ai';
 import{CiLocationOn} from 'react-icons/ci';
+import { m } from 'framer-motion';
 
 
 
 const BookRide = () => {  
  
   return (
-    <Flex className="book-ride" 
+    <Flex className="BookRide" 
       flexDirection={'column'}
       justifyContent={'center'} 
       alignItems={'center'} 
       // border={'2px solid black'} 
-      m={'24'} p={'10'} 
-      borderRadius={'xl'} 
+      m={{base:10, md:24}} p={10} 
+      mb={{base:24, md:40}}
       boxShadow={'dark-lg'}
 
     >
-      <Text fontWeight={'bold'} fontSize={'3xl'} mb={'10'}>Book ride</Text>
+      <Text className='BookRide__title' fontWeight={'bold'} fontSize={'3xl'} mb={'10'}>Book ride</Text>
       <Grid 
+        className='BookRide__grid'
         gap={10}
         w={'full'} 
         alignItems={'flex-end'}
@@ -42,7 +44,7 @@ const BookRide = () => {
         
       >
 
-        <FormControl>
+        <FormControl className='grid__item'>
           <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={'lg'}>Select your car <AiFillCar/></FormLabel>
           <Select
           id="country"
@@ -58,7 +60,7 @@ const BookRide = () => {
         </Select>
         </FormControl>
         
-        <FormControl>
+        <FormControl className='grid__item'>
         <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'} fontSize={'lg'}>Pick place <CiLocationOn/></FormLabel>
           <Select
           id="country"
@@ -76,7 +78,7 @@ const BookRide = () => {
         </Select>
         </FormControl>
 
-        <FormControl>
+        <FormControl className='grid__item'>
           <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'} fontSize={'lg'}>Drop place <CiLocationOn/></FormLabel>
           <Select
           id="country"
@@ -94,20 +96,20 @@ const BookRide = () => {
         </Select>
         </FormControl>
 
-        <FormControl>
+        <FormControl className='grid__item'>
         <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={'lg'}>Pick date <AiOutlineCalendar/></FormLabel>
 
           <Input type='date'/>
           
         </FormControl>
 
-        <FormControl>
+        <FormControl className='grid__item'>
         <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={'lg'}>Drop date <AiOutlineCalendar/></FormLabel>
 
           <Input type='date'/>
         </FormControl>
 
-        <Button 
+        <Button className='grid__item' 
           fontSize={'lg'}
           bg={useColorModeValue('red.500', 'red.700')}
           color={'white'}

@@ -67,7 +67,8 @@ const Offer = () => {
     
       <Image src='src/images/offer-img.png' w={''} h={''}/>
 
-      <Box display={'flex'} justifyContent={'center'} alignItems={'center'} columnGap={12} >
+      <Box display={'flex'} flexDir={{base:'column', lg:'row'}} justifyContent={'center'} alignItems={'center'} columnGap={12}>
+
         <Stack 
           spacing={4} 
           as={Container} 
@@ -88,7 +89,7 @@ const Offer = () => {
             gap={2} 
             fontSize={'xl'} 
             display={'flex'} 
-            justifyContent={'flex-start'}
+            justifyContent={{base:'center', lg:'flex-start'}}
             bg={useColorModeValue('red.500', 'red.700')}
             _hover={{ bg: 'red.600' }}
             color={'white'}
@@ -120,6 +121,7 @@ const Offer = () => {
             />
           </Flex>
         </Container>
+
       </Box>
 
     </Box>

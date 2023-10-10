@@ -10,15 +10,17 @@ const Team = () => {
   const cards = TeamMember.map(member => {
     return(
       <TeamCard
+        className='Team__card'
         key={member.id}
         {...member}
       />
     )
   })
   return (
-    <Box>
-      <HomeRoute title={'Team'}/>
-      <Grid 
+    <Box className='Team'>
+      <HomeRoute className="Team__title" title={'Team'}/>
+      <Grid
+        className='Team__container' 
        templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
        templateRows={{ base: "repeat(6, 1fr)", lg: "repeat(3, 1fr)", xl: "repeat(2, 1fr)" }}
       
@@ -27,8 +29,12 @@ const Team = () => {
         {cards}
       </Grid>
 
-      <Banner/> 
-    <RentSteps/>
+      <Banner
+        className="Team__banner"
+        title='Meet Our Team !' textColor="We" description='are the best in the business '
+        /> 
+
+      <RentSteps className='Team__steps'/>
     </Box>
   )
 }

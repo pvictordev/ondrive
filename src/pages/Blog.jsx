@@ -53,10 +53,11 @@ const BlogAuthor = (props) => {
 const Blog = () => {
   return (
     <Box>
-      <HomeRoute title={'Blog'}/>
-      <Container maxW={'7xl'} p="12">
-        <Heading as="h1">Our Blog</Heading>
+      <HomeRoute className="Blog__title" title={'Blog'}/>
+      <Container className='Blog__container' maxW={'7xl'} p="12">
+        <Heading className='container__header' as="h1">Our Blog</Heading>
         <Box
+          className='container__blog'
           marginTop={{ base: '1', sm: '5' }}
           display="flex"
           flexDirection={{ base: 'column', sm: 'row' }}
@@ -122,6 +123,7 @@ const Blog = () => {
         </Box>
 
         <Box
+          className='container__blog'
           marginTop={{ base: '1', sm: '5' }}
           display="flex"
           flexDirection={{ base: 'column', sm: 'row-reverse' }}
@@ -187,6 +189,7 @@ const Blog = () => {
         </Box>
 
         <Box
+          className='container__blog'
           marginTop={{ base: '1', sm: '5' }}
           display="flex"
           flexDirection={{ base: 'column', sm: 'row' }}
@@ -251,7 +254,11 @@ const Blog = () => {
           </Box>
         </Box>
       </Container>
-      <Banner/> 
+      <Banner 
+        title='You get to know us better!'
+       textColor="Our" 
+       description='duty is to provide valuable services to our customers'
+       /> 
       <RentSteps/>
     </Box>
   )

@@ -20,21 +20,21 @@ const Vehicles = () => {
   const [active, setActive] = useState("first");
   
   return (
-    <Box as="section" className="pick-section" p={24}>
+    <Box as="section" className="pick-section" m={{base:10, md:24}}  >
       {/* maxW="container.lg" */}
     <Container maxW={''} >
       <Box className="pick-container">
-        <Flex className="pick-container__title" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} pb={5}>
-          <Heading as="h2" fontSize="4xl">
+        <Flex className="pick-container__title" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} mb={5}>
+          <Heading align="center" mb={5}  as="h2" fontSize="4xl">
             Vehicle Models
           </Heading>
-          <Text>
+          <Text align={'center'} fontSize={'lg'}>
             Choose from a variety of our amazing vehicles to rent for your
             next adventure or business trip
           </Text>
         </Flex>
 
-        <Grid className="pick-container__car-content" gridTemplateColumns={'1fr 2fr 1fr'} gap={10} alignItems={'center'} justifyItems={'center'}  >
+        <Grid className="pick-container__car-content" gridTemplateColumns={{base:'1fr', lg:'1fr 2fr 1fr'}} gap={10} alignItems={'center'} justifyItems={'center'}  >
           <Flex className="pick-box" flexDirection={'column'} gap={4}>
             <Button
               // color={'white'}

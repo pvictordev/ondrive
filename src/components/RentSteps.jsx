@@ -18,7 +18,7 @@ const Feature = ({ title, text, icon }) => {
           rounded={'full'}
           bg={'red.500'}
           mb={1}
-
+          
           >
           {icon}
         </Flex>
@@ -29,8 +29,8 @@ const Feature = ({ title, text, icon }) => {
   }
 const RentSteps = () => {
   return (
-    <Box p={24} align={'center'}>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} columnGap={12}>
+    <Box className='RentSteps' m={{base:10, md:24}} align={'center'}>
+        <SimpleGrid className='RentSteps__features' columns={{ base: 1, md: 3 }} spacing={10} columnGap={12}>
             <Feature
                 icon={<Icon as={BiSolidLogIn} w={10} h={10} />}
                 title={'Sign up / Login in'}
@@ -47,6 +47,7 @@ const RentSteps = () => {
                 text={'Our knowledgeable and friendly operators are always ready to help with any questions or concerns'}
             />
         </SimpleGrid>
+
     </Box>
   )
 }

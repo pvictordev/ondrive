@@ -15,7 +15,7 @@ const Home = () => {
     <BookRide/>
     <RentSteps/>
     <Vehicles/>
-    <Banner/>
+    <Banner title='Save your cash and never crash !' textColor="Better" description='than competitors, we have things that they do not'/>
     <Offer/>
     <Testimonials/>
     <Faq/>

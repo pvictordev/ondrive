@@ -36,12 +36,12 @@ import RentSteps from '../components/RentSteps'
 
 const Contact = () => {
   return (
-    <Box>
-      <HomeRoute title={'Contact'}/>
+    <Box className='Contact' >
+      <HomeRoute className='Contact__title' title={'Contact'}/>
 
-      <Container maxW="full" centerContent overflow="hidden" >
+      <Container className='Contanct__container' maxW="full" centerContent overflow="hidden" >
       
-      <Flex >
+      <Flex className='container__form ' >
         {/* <div>need additional info?</div> */}
         {/* <Box>
           <Heading>Need Additional Info ?</Heading>
@@ -50,7 +50,7 @@ const Contact = () => {
 
         <Box
           // bg='white'
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={useColorModeValue('white', 'gray.700')}
           color="black"
           borderRadius="lg"
           border={'4px solid red'}
@@ -58,12 +58,12 @@ const Contact = () => {
           p={{ sm: 5, md: 5, lg: 16 }}
           >
 
-            <Box p={4}>
+            <Box p={4} color={useColorModeValue('black', 'white')} >
             <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
               <WrapItem>
                 <Box>
                   <Heading>Contact</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="black">
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} >
                     Fill up the form below to contact
                   </Text>
                   <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
@@ -133,7 +133,7 @@ const Contact = () => {
                 </Box>
               </WrapItem>
               <WrapItem>
-                <Box borderRadius="lg" bg={useColorModeValue('white', 'gray.800')}>
+                <Box borderRadius="lg" bg={useColorModeValue('white', 'gray.700')}>
                   <Box m={8} color="">
                     <VStack spacing={5}>
                       <FormControl id="name">
@@ -181,8 +181,13 @@ const Contact = () => {
 
       </Container>
 
-      <Banner/> 
-      <RentSteps/>
+      <Banner 
+        className="Contact__banner"
+        title='Do not be shy !' textColor="Contact" description='us for any questions via email, facebbok or whatsapp'
+      /> 
+
+      <RentSteps className='Contact__steps'/>
+
     </Box>
   )
 }
