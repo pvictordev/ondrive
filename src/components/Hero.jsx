@@ -14,29 +14,35 @@ import {
 export default function Hero() {
 
   return (
-    <Container maxW={'7xl'} p='12'>
+    <Container className='Hero' maxW={'7xl'} p='12'>
         <Stack
+          className='Hero__container'
            align={'center'}
            spacing={{ base: 8, md: 10 }}
-           py={{ base: 10, md: 23 }}
+           py={{ base: 5, md: 23 }}
            direction={{ base: 'column', md: 'row' }}
+
         >
-          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+          <Stack className='container__content' flex={1} alignItems={'center'} spacing={{ base: 5, md: 10 }}>
             <Heading 
+              className='content__text'
               lineHeight={1.1}
               fontWeight={600}
               fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
+              
             >
               <Text
+                className='content__title'
                 as={'span'}
                 position={'relative'}
                 fontSize={'6xl'}
                 fontWeight={'bold'}
+                
               >
-                <Text as={'span'} color={'red'}>Save</Text> your money with our car <Text as={'span'} color={'red'}>rental</Text>
+              <Text className='title__text' as={'span'} color={'red'}>Save</Text> your money with our car <Text as={'span'} color={'red'}>rental</Text>
               </Text>
             </Heading>
-            <Text color={'gray.500'} fontSize={'xl'}> Rent the car of your dreams for a few days or even a few hours and enjoy the ride.</Text>
+            <Text className='title__description' color={'gray.500'} fontSize={'xl'}> Rent the car of your dreams for a few days or even a few hours and enjoy the ride.</Text>
 
             <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
               <Button
@@ -69,7 +75,9 @@ export default function Hero() {
           >
             <Image align={'center'}
               w={'100%'}
-              h={'100%'} src='src/images/car.png'/>
+              h={'100%'} src='src/images/car.png'
+              display={{base:'none', md:'block'}}
+              />
           </Flex>
         </Stack>
      

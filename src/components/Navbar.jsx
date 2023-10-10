@@ -30,10 +30,10 @@ const Navbar = () => {
   };
 
   return (  
-  <Flex align="center" py={'5'} px={'7'} >
+  <Flex align="center" py={5} px={{base:2, sm:'7'}}  >
 
     <Center>
-      <Image boxSize={'2.5rem'} src='src/images/ondrive.png' />
+      <Image display={{base:'none', sm:'block'}} boxSize={'2.5rem'} src='src/images/ondrive.png' />
       <Text fontSize='3xl' pl='3' fontWeight={'extrabold'} letterSpacing='tightest' color=''>Ondrive</Text>
     </Center>
 
