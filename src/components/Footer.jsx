@@ -16,6 +16,7 @@ import {
 import { ReactNode } from 'react'
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
+import Logo from '../images/ondrive.png'
 
 const Footer = () => {
   return (
@@ -31,7 +32,7 @@ const Footer = () => {
           <Stack spacing={6} align={'flex-start'}>
             <Box> 
               <Center>
-                <Image boxSize={'2.5rem'} src='src/images/ondrive.png' />
+                <Image boxSize={'2.5rem'} src={Logo} />
                 <Text fontSize='3xl' pl='3' fontWeight={'extrabold'} letterSpacing='tightest' color=''>Ondrive</Text>
               </Center>
             </Box>

@@ -16,6 +16,7 @@ import { ReactElement } from 'react'
 import {MdPriceCheck} from 'react-icons/md'; 
 import {AiOutlineWifi, AiOutlineFileAdd} from 'react-icons/ai';
 import {MdArrowForwardIos} from 'react-icons/md';
+import OfferImage from '../images/offer-img.png';
 
 
 const Card = ({ heading, description, icon, href }) => {
@@ -72,7 +73,7 @@ const Offer = () => {
   return (
     <Box m={24} display={'flex'} flexDirection={'column'} justifyContent={''} alignItems={''}>
     
-      <Image src='src/images/offer-img.png' w={''} h={''}/>
+      <Image src={OfferImage} w={''} h={''}/>
 
       <Box display={'flex'} flexDir={{base:'column', lg:'row'}} justifyContent={'center'} alignItems={'center'} columnGap={12}>
 

@@ -12,6 +12,7 @@ import { Icon } from '@chakra-ui/react'
 import { defineStyleConfig } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons'
+import Logo from '../images/ondrive.png'
 
 const Navbar = () => {
 
@@ -33,7 +34,7 @@ const Navbar = () => {
   <Flex align="center" py={5} px={{base:2, sm:'7'}}  >
 
     <Center>
-      <Image display={{base:'none', sm:'block'}} boxSize={'2.5rem'} src='src/images/ondrive.png' />
+      <Image display={{base:'none', sm:'block'}} boxSize={'2.5rem'} src={Logo} />
       <Text fontSize='3xl' pl='3' fontWeight={'extrabold'} letterSpacing='tightest' color=''>Ondrive</Text>
     </Center>
 

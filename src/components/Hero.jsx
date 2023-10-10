@@ -10,6 +10,7 @@ import {
   Image,
   useColorModeValue,
 } from '@chakra-ui/react'
+import HeroImage from '../images/car.png'
 
 export default function Hero() {
 
@@ -23,7 +24,7 @@ export default function Hero() {
            direction={{ base: 'column', md: 'row' }}
 
         >
-          <Stack className='container__content' flex={1} alignItems={'center'} spacing={{ base: 5, md: 10 }}>
+          <Stack className='container__content' flex={1} alignItems={{base:'center', md:'flex-start'}} spacing={{ base: 5, md: 10 }}>
             <Heading 
               className='content__text'
               lineHeight={1.1}
@@ -75,7 +76,7 @@ export default function Hero() {
           >
             <Image align={'center'}
               w={'100%'}
-              h={'100%'} src='src/images/car.png'
+              h={'100%'} src={HeroImage}
               display={{base:'none', md:'block'}}
               />
           </Flex>
