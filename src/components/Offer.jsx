@@ -20,7 +20,8 @@ import {MdArrowForwardIos} from 'react-icons/md';
 
 const Card = ({ heading, description, icon, href }) => {
   return (
-    <Box
+    <Box 
+      className='Card'
       // maxW={{ base: 'full', md: '275px' }}
       w={'full'}
       borderWidth="1px"
@@ -32,6 +33,7 @@ const Card = ({ heading, description, icon, href }) => {
       <Flex 
       // align={'start'}
       display={'flex'}
+      flexDirection={{base:'column', md:'row'}}
       justifyContent={'center'}
       alignItems={'center'}
       spacing={2}>
@@ -48,9 +50,14 @@ const Card = ({ heading, description, icon, href }) => {
           bg={useColorModeValue('red.500', 'red.700')}>
           {icon}
         </Flex>
-
+        {/* {{base:'flex-start', md:'center'}} */}
         <Box mt={2}>
-          <Heading size="md">{heading}</Heading>
+          <Heading 
+            size="md"
+            alignItems={'center'}
+          >
+            {heading}
+          </Heading>
           <Text mt={1} fontSize={'sm'}>
             {description}
           </Text>
