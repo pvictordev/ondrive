@@ -25,6 +25,8 @@ const BookRide = () => {
   const carOptions = CarsList.map((car) => {
     return <option key={car.id}>{car.name}</option>
   })
+
+  
  
   return (
     
@@ -48,13 +50,14 @@ const BookRide = () => {
         templateRows={{ base: "repeat(6, 1fr)", lg: "repeat(3, 1fr)", xl: "repeat(2, 1fr)" }}
         
       >
-
-        <FormControl className='grid__item'>
+      
+      {/* <form className="BookRide__form grid__item" > */}
+        <FormControl className='form__car'>
           <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={{base:'sm', sm:'lg'}}>Select your car <AiFillCar/></FormLabel>
           <Select
-          id="country"
-          name="country"
-          autoComplete="country"
+          id="car"
+          name="car"
+          autoComplete="car"
           placeholder="Select option"
           focusBorderColor="brand.400"
           shadow="sm"
@@ -65,12 +68,12 @@ const BookRide = () => {
         </Select>
         </FormControl>
         
-        <FormControl className='grid__item'>
+        <FormControl className='form__city'>
         <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'} fontSize={{base:'sm', sm:'lg'}}>Pick place <CiLocationOn/></FormLabel>
           <Select
-          id="country"
-          name="country"
-          autoComplete="country"
+          id="city"
+          name="city"
+          autoComplete="city"
           placeholder="Select option"
           focusBorderColor="brand.400"
           shadow="sm"
@@ -87,12 +90,12 @@ const BookRide = () => {
         </Select>
         </FormControl>
 
-        <FormControl className='grid__item'>
+        <FormControl className='form__city'>
           <FormLabel display={'flex'} alignItems={'flex-start'} gap={'2'} fontSize={{base:'sm', sm:'lg'}}>Drop place <CiLocationOn/></FormLabel>
           <Select
-          id="country"
-          name="country"
-          autoComplete="country"
+          id="city"
+          name="city"
+          autoComplete="city"
           placeholder="Select option"
           focusBorderColor="brand.400"
           shadow="sm"
@@ -108,14 +111,14 @@ const BookRide = () => {
         </Select>
         </FormControl>
 
-        <FormControl className='grid__item'>
+        <FormControl className='form__date'>
         <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={{base:'sm', sm:'lg'}}>Pick date <AiOutlineCalendar/></FormLabel>
 
-          <Input type='date'/>
+          <Input id='date' name='date' type='date'/>
           
         </FormControl>
 
-        <FormControl className='grid__item'>
+        <FormControl className='form__date'>
         <FormLabel display={'flex'} alignItems={'center'} gap={'2'} fontSize={{base:'sm', sm:'lg'}}>Drop date <AiOutlineCalendar/></FormLabel>
 
           <Input type='date'/>
@@ -128,8 +131,12 @@ const BookRide = () => {
           _hover={{
             bg: 'red.600',
           }}
-        >Search</Button>
+        >
+          Search
+        </Button>
         
+        {/* </form> */}
+
       </Grid>
     </Flex>
   )

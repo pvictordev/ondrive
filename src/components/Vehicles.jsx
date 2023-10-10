@@ -86,9 +86,9 @@ const Vehicles = () => {
 
        
           <Box className='pick-img'>
-            {active == 'first' && <img src={CarsList[0].imagePNG} alt="" />}
-            {active == 'second' && <img src={CarsList[1].imagePNG} alt="" />}
-            {active == 'third' && <img src={CarsList[2].imagePNG} alt="" />}
+            {active == 'first' && <img src={CarsList[0].imageURL} alt="" />}
+            {active == 'second' && <img src={CarsList[1].imageURL} alt="" />}
+            {active == 'third' && <img src={CarsList[2].imageURL} alt="" />}
             {active == 'fourth' && <img src={CarsList[3].imageURL} alt="" />}
             {active == 'fiveth' && <img src={CarsList[4].imageURL} alt="" />}
             {active == 'sixth' && <img src={CarsList[5].imageURL} alt="" />}
