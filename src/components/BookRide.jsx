@@ -100,6 +100,7 @@ const BookRide = () => {
       mb={{ base: 24, md: 40 }}
       boxShadow={"dark-lg"}
       rounded={"lg"}
+      id="bookRide"
     >
       <Text
         className="BookRide__title"

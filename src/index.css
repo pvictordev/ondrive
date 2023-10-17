@@ -7,3 +7,6 @@
   text-decoration: none;
   font-family: 'Onest', sans-serif;
 }
+html, body {
+  scroll-behavior: smooth;
+}

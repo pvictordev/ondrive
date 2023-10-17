@@ -17,34 +17,35 @@ const VehiclesBox = (props) => {
     <Box>
       <Stack direction="column" fontSize={"md"}>
         <Text
-          border={"2px solid  "}
+          border={""}
           borderRadius={"3xl"}
           bg={useColorModeValue("red.500", "red.700")}
           color={"white"}
           textAlign={"center"}
-          p={'2'}
-          fontSize={"xl"}
+          p={"1"}
+          fontSize={"lg"}
+          mb={'3'}
         >
           ${props.price}/ Per day
         </Text>
-        <Text p={"1"} borderRadius={"2xl"} border={"2px solid red "}>
-          Model: {props.model}
+        <Text >
+          <Text as={'span'} color={'red.500'}>Model:</Text> {props.model}
         </Text>
-        <Text p={"1"} borderRadius={"2xl"} border={"2px solid red"}>
+        <Text >
           {" "}
-          Mark: {props.mark}
+          <Text as={'span'} color={'red.500'}>Brand:</Text> {props.brand}
         </Text>
-        <Text p={"1"} borderRadius={"2xl"} border={"2px solid red"}>
-          Year: {props.year}
+        <Text borderRadius={"2xl"}>
+           <Text as={'span'} color={'red.500'}>Year:</Text> {props.year}
         </Text>
-        <Text p={"1"} borderRadius={"2xl"} border={"2px solid red"}>
-          Doors: {props.doors}
+        <Text>
+          <Text as={'span'} color={'red.500'}>Doors:</Text> {props.doors}
         </Text>
-        <Text p={"1"} borderRadius={"2xl"} border={"2px solid red"}>
-          Transmission: {props.transmission}
+        <Text >
+          <Text as={'span'} color={'red.500'}>Transmission:</Text> {props.transmission}
         </Text>
-        <Text p={"1"} borderRadius={"2xl"} border={"2px solid red"}>
-          Fuel: {props.fuel}
+        <Text >
+          <Text as={'span'} color={'red.500'}>Fuel:</Text> {props.fuel}
         </Text>
       </Stack>
     </Box>

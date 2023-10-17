@@ -28,7 +28,7 @@ const Cars = () => {
     templateRows={{ base: "repeat(6, 1fr)", lg: "repeat(3, 1fr)", xl: "repeat(2, 1fr)" }}
     rowGap={10} 
     columnGap={0}
-    p={50} 
+    // p={50} 
     >
       {cars}
     </Grid>

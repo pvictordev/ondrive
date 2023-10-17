@@ -89,7 +89,7 @@ const Testimonials = (props) => {
 
   return (
     <Box bg={useColorModeValue('gray.50', 'gray.700')}>
-      <Container maxW={'7xl'} p={24} as={Stack} spacing={12} >
+      <Container maxW={'7xl'} p={{base:'10', lg:'24'}} pb={'16'} as={Stack} spacing={12} >
         <Stack spacing={0} align={'center'} >
           <Heading fontSize={'4xl'} pb={4}>Our Clients Say</Heading>
           <Text fontSize={'lg'} textAlign={'center'}>Discover the positive impact we've made on the our clients by reading through their testimonials. Our clients have experienced our service and results, and they're eager to share their positive experiences with you.</Text>
