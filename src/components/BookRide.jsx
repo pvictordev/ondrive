@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Text,
@@ -42,6 +42,8 @@ const BookRide = () => {
   });
 
   const [selectedCarImage, setSelectedCarImage] = useState("");
+  const [showError, setShowError] = useState(false);
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -57,7 +59,18 @@ const BookRide = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(book);
+    //console.log(book);
+      const { car, pickLocation, dropLocation, pickDate, dropDate } = book;
+      if (car && pickLocation && dropLocation && pickDate && dropDate) {
+        // Все поля заполнены, открываем модальное окно
+        onOpen();
+        // Сбрасываем состояние ошибки
+        setShowError(false);
+      } else {
+        onClose()
+        // Не все поля заполнены, показываем сообщение об ошибке
+        setShowError(true);
+      }
   };
 
   const carOptions = CarsList.map((car) => {
@@ -74,6 +87,7 @@ const BookRide = () => {
     return <Image src={car.imageURL} alt={car.name}></Image>;
   });
 
+  
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <Flex
@@ -81,7 +95,6 @@ const BookRide = () => {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
-      // border={'2px solid black'}
       m={{ base: 5, md: 24 }}
       p={{ base: 5, sm: 10 }}
       mb={{ base: 24, md: 40 }}
@@ -92,10 +105,49 @@ const BookRide = () => {
         className="BookRide__title"
         fontWeight={"bold"}
         fontSize={{ base: "xl", sm: "3xl" }}
-        mb={"10"}
+        mb={5}
       >
         Book ride
       </Text>
+
+      {/* {
+        <Text
+          className="error"
+          fontWeight={"bold"}
+          border={"2px solid red"}
+          width={"100%"}
+          textAlign={"center"}
+          p={2}
+          mb={2}
+          letterSpacing={"2px"}
+          fontSize={"xl"}
+          color={"white"}
+          backgroundColor={"red.500"}
+          borderRadius={"xl"}
+          visibility={'hidden'}
+        >
+          Complete all the fields!
+        </Text>
+      } */}
+      {showError && (
+        <Text
+          className="error"
+          fontWeight={"bold"}
+          border={"2px solid red"}
+          width={"100%"}
+          textAlign={"center"}
+          p={2}
+          mb={2}
+          letterSpacing={"2px"}
+          fontSize={"xl"}
+          color={"white"}
+          backgroundColor={"red.500"}
+          borderRadius={"xl"}
+        >
+          Complete all the fields!
+        </Text>
+      )}
+
       <Grid
         as={"form"}
         onSubmit={handleSubmit}
@@ -283,8 +335,11 @@ const BookRide = () => {
 
                 <Box
                   className="reservation__box"
-                  display={"flex"}
-                  justifyContent={"space-between"}
+                  // display={"flex"}
+                  // justifyContent={"space-between"}
+                  display={"grid"}
+                  gridTemplateColumns={"1fr 1fr"}
+                  gap={"10"}
                   mb={"14"}
                 >
                   <Flex
@@ -303,10 +358,18 @@ const BookRide = () => {
                           display={"flex"}
                           alignItems={"center"}
                         >
-                          <BiTime /> Pick Up Time
+                          <BiTime /> Pick Up Time{" "}
+                          <Text
+                            as={"span"}
+                            fontSize={"sm"}
+                            color={"red.500"}
+                            ml={"2"}
+                          >
+                            {book.pickDate}
+                          </Text>
                         </Text>
-                        <Text display={"flex"}>
-                          {book.pickDate} / <Input type="time" />{" "}
+                        <Text display={"flex"} fontSize={"md"}>
+                          <Input type="time" />{" "}
                         </Text>
                       </Box>
 
@@ -317,10 +380,18 @@ const BookRide = () => {
                           display={"flex"}
                           alignItems={"center"}
                         >
-                          <BiTime /> Drop Off Time
+                          <BiTime /> Drop Off Time{" "}
+                          <Text
+                            as={"span"}
+                            fontSize={"sm"}
+                            color={"red.500"}
+                            ml={"2"}
+                          >
+                            {book.dropDate}
+                          </Text>
                         </Text>
                         <Text display={"flex"}>
-                          {book.dropDate} / <Input type="time" />{" "}
+                          <Input type="time" />{" "}
                         </Text>
                       </Box>
 
@@ -360,7 +431,6 @@ const BookRide = () => {
                       </Text>
                     </Text>
                     <Image
-                      width={"15rem"}
                       className="car__image"
                       src={selectedCarImage}
                       alt={book.car}
