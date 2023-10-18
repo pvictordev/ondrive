@@ -320,7 +320,9 @@ const BookRide = () => {
               <ModalCloseButton />
             </ModalHeader>
 
-            <ModalBody className="reservation">
+            <ModalBody
+              className="reservation"
+            >
               <form id="new-note" onSubmit={modalSubmit}>
                 <Text
                   fontWeight={"bold"}
@@ -339,7 +341,7 @@ const BookRide = () => {
                   // display={"flex"}
                   // justifyContent={"space-between"}
                   display={"grid"}
-                  gridTemplateColumns={"1fr 1fr"}
+                  gridTemplateColumns={{base:'1fr', md: '1fr 1fr'}}
                   gap={"10"}
                   mb={"14"}
                 >
