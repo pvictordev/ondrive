@@ -33,7 +33,7 @@ const VehiclesBox = (props) => {
         </Text>
         <Text >
           {" "}
-          <Text as={'span'} color={'red.500'}>Brand:</Text> {props.brand}
+          <Text as={'span'} color={'red.500'}>Brand:</Text> {props.mark}
         </Text>
         <Text borderRadius={"2xl"}>
            <Text as={'span'} color={'red.500'}>Year:</Text> {props.year}
