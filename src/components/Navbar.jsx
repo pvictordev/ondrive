@@ -58,7 +58,7 @@ const Navbar = () => {
           letterSpacing="tightest"
           color=""
         >
-          Ondrive
+          <Link to="/">Ondrive</Link>
         </Text>
       </Center>
 
