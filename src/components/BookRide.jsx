@@ -4,33 +4,27 @@ import {
   Text,
   Grid,
   Flex,
-  Stack,
   Input,
   Button,
   FormLabel,
   FormControl,
   Select,
   useColorModeValue,
-  ChakraProvider,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  FormHelperText,
   ModalFooter,
   useDisclosure,
   Image,
 } from "@chakra-ui/react";
 
-import { useToast } from "@chakra-ui/react";
 import { AiFillCar, AiOutlineCalendar } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
-import { Link } from "react-router-dom";
 import CarsList from "../Data/CarsList";
 import { BiTime } from "react-icons/bi";
-import { color } from "framer-motion";
 
 const BookRide = () => {
   const [book, setBook] = useState({
@@ -59,16 +53,15 @@ const BookRide = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(book);
       const { car, pickLocation, dropLocation, pickDate, dropDate } = book;
       if (car && pickLocation && dropLocation && pickDate && dropDate) {
-        // Все поля заполнены, открываем модальное окно
+
         onOpen();
-        // Сбрасываем состояние ошибки
+
         setShowError(false);
       } else {
         onClose()
-        // Не все поля заполнены, показываем сообщение об ошибке
+
         setShowError(true);
       }
   };
@@ -110,26 +103,6 @@ const BookRide = () => {
       >
         Book ride
       </Text>
-
-      {/* {
-        <Text
-          className="error"
-          fontWeight={"bold"}
-          border={"2px solid red"}
-          width={"100%"}
-          textAlign={"center"}
-          p={2}
-          mb={2}
-          letterSpacing={"2px"}
-          fontSize={"xl"}
-          color={"white"}
-          backgroundColor={"red.500"}
-          borderRadius={"xl"}
-          visibility={'hidden'}
-        >
-          Complete all the fields!
-        </Text>
-      } */}
       {showError && (
         <Text
           className="error"
@@ -167,7 +140,6 @@ const BookRide = () => {
           xl: "repeat(2, 1fr)",
         }}
       >
-        {/* <form className="BookRide__form grid__item" > */}
         <FormControl className="form__car">
           <FormLabel
             display={"flex"}
@@ -338,8 +310,6 @@ const BookRide = () => {
 
                 <Box
                   className="reservation__box"
-                  // display={"flex"}
-                  // justifyContent={"space-between"}
                   display={"grid"}
                   gridTemplateColumns={{base:'1fr', md: '1fr 1fr'}}
                   gap={"10"}
@@ -437,6 +407,7 @@ const BookRide = () => {
                       className="car__image"
                       src={selectedCarImage}
                       alt={book.car}
+                      borderRadius={"xl"}
                     />
                   </Box>
                 </Box>

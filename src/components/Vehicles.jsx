@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -13,13 +13,12 @@ import {
   useColorModeValue,
   ButtonGroup,
 } from "@chakra-ui/react";
-import CarsList from '../Data/CarsList';
-import VehiclesBox from './VehiclesBox';
+import CarsList from "../Data/CarsList";
+import VehiclesBox from "./VehiclesBox";
 
 const Vehicles = () => {
-
   const [active, setActive] = useState("first");
-  
+
   return (
     <Box as="section" className="pick-section" m={{ base: 10, md: 24 }}>
       {/* maxW="container.lg" */}
@@ -50,9 +49,6 @@ const Vehicles = () => {
           >
             <ButtonGroup className="pick-box" flexDirection={"column"} gap={4}>
               <Button
-                // color={'white'}
-                // bg={useColorModeValue('red.500', 'red.700')}
-                // _hover={{ bg: 'red.600' }}
                 onClick={() => setActive("first")}
                 isActive={active == "first"}
                 ml={2}
@@ -91,13 +87,49 @@ const Vehicles = () => {
               </Button>
             </ButtonGroup>
 
-            <Box className="pick-img" >
-              {active == "first" && <img src={CarsList[0].imageURL} alt="" />}
-              {active == "second" && <img src={CarsList[1].imageURL} alt="" />}
-              {active == "third" && <img src={CarsList[2].imageURL} alt="" />}
-              {active == "fourth" && <img src={CarsList[3].imageURL} alt="" />}
-              {active == "fiveth" && <img src={CarsList[4].imageURL} alt="" />}
-              {active == "sixth" && <img src={CarsList[5].imageURL} alt="" />}
+            <Box className="pick-img">
+              {active == "first" && (
+                <img
+                  style={{ borderRadius: "15px" }}
+                  src={CarsList[0].imageURL}
+                  alt=""
+                />
+              )}
+              {active == "second" && (
+                <img
+                  style={{ borderRadius: "15px" }}
+                  src={CarsList[1].imageURL}
+                  alt=""
+                />
+              )}
+              {active == "third" && (
+                <img
+                  style={{ borderRadius: "15px" }}
+                  src={CarsList[2].imageURL}
+                  alt=""
+                />
+              )}
+              {active == "fourth" && (
+                <img
+                  style={{ borderRadius: "15px" }}
+                  src={CarsList[3].imageURL}
+                  alt=""
+                />
+              )}
+              {active == "fiveth" && (
+                <img
+                  style={{ borderRadius: "15px" }}
+                  src={CarsList[4].imageURL}
+                  alt=""
+                />
+              )}
+              {active == "sixth" && (
+                <img
+                  style={{ borderRadius: "15px" }}
+                  src={CarsList[5].imageURL}
+                  alt=""
+                />
+              )}
             </Box>
 
             <Box
@@ -105,6 +137,7 @@ const Vehicles = () => {
               p={7}
               border={"2px solid red"}
               borderRadius={"3xl"}
+              
             >
               {active == "first" && <VehiclesBox {...CarsList[0]} />}
               {active == "second" && <VehiclesBox {...CarsList[1]} />}
@@ -118,6 +151,6 @@ const Vehicles = () => {
       </Container>
     </Box>
   );
-}
+};
 
-export default Vehicles
+export default Vehicles;
