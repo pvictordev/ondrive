@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   Box,
   Button,
@@ -10,14 +9,12 @@ import {
   Text,
   useColorModeValue,
   Image,
-} from '@chakra-ui/react'
-import { ReactElement } from 'react'
+} from "@chakra-ui/react";
 
-import {MdPriceCheck} from 'react-icons/md'; 
-import {AiOutlineWifi, AiOutlineFileAdd} from 'react-icons/ai';
-import {MdArrowForwardIos} from 'react-icons/md';
-import OfferImage from '../images/offer-img.png';
-
+import { MdPriceCheck } from "react-icons/md";
+import { AiOutlineWifi, AiOutlineFileAdd } from "react-icons/ai";
+import { MdArrowForwardIos } from "react-icons/md";
+import OfferImage from "../images/offer-img.png";
 
 const Card = ({ heading, description, icon, href }) => {
   return (
@@ -68,13 +65,13 @@ const Card = ({ heading, description, icon, href }) => {
       </Flex>
     </Box>
   );
-}
+};
 
 const Offer = () => {
   return (
     <Box
       className="offer"
-      m={{base:'5', md:'24'}}
+      m={{ base: "5", md: "24" }}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={""}
@@ -88,14 +85,13 @@ const Offer = () => {
         flexDir={{ base: "column", lg: "row" }}
         justifyContent={"center"}
         alignItems={"center"}
-      
       >
         <Stack
           spacing={4}
           as={Container}
           // maxW={'3xl'}
           textAlign={"center"}
-          gap={{base:'5', lg:'10'}}
+          gap={{ base: "5", lg: "10" }}
         >
           <Heading
             fontSize={{ base: "2xl", sm: "3xl", md: "4xl", lg: "5xl" }}
@@ -122,7 +118,7 @@ const Offer = () => {
             <Button
               maxW={"170px"}
               gap={2}
-              fontSize={{base:'sm', md:'md', lg:'lg'}}
+              fontSize={{ base: "sm", md: "md", lg: "lg" }}
               display={"flex"}
               bg={useColorModeValue("red.500", "red.700")}
               _hover={{ bg: "red.600" }}
@@ -167,6 +163,6 @@ const Offer = () => {
       </Box>
     </Box>
   );
-}
+};
 
-export default Offer
+export default Offer;

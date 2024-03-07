@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  VStack,
   Box,
   HStack,
   Flex,
@@ -22,8 +21,6 @@ import {
   ListItem,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Icon } from "@chakra-ui/react";
-import { defineStyleConfig } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
 import Logo from "../images/ondrive.png";

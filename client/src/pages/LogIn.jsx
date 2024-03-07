@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
   Container,
   Box,
@@ -11,8 +11,8 @@ import {
 import HomeRoute from "../components/HomeRoute";
 
 const LogIn = () => {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   // Handle form submission
   const handleSubmit = (e) => {
