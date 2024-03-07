@@ -100,9 +100,9 @@ const Navbar = () => {
               cursor={"pointer"}
             >
               <Link
+                to={"/signin"}
                 borderRadius="xl"
                 style={{ textDecoration: "none" }}
-                href="#home"
               >
                 Sign in
               </Link>
@@ -115,7 +115,7 @@ const Navbar = () => {
               color={"white"}
               cursor={"pointer"}
             >
-              <Link style={{ textDecoration: "none" }} href="#home">
+              <Link to={"/login"} style={{ textDecoration: "none" }}>
                 Log in{" "}
               </Link>
             </Box>
