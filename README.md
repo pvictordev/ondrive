@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" height="200" src="./src/client/images/ondrive.png">
+  <img width="200" height="200" src="./client/src/images/ondrive.png">
 </p>
 
 ## Ondrive - Car Rental Website
