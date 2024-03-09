@@ -91,6 +91,7 @@ const Navbar = () => {
               p="2"
               borderColor={""}
               borderRadius="xl"
+              // eslint-disable-next-line react-hooks/rules-of-hooks
               bg={useColorModeValue("red.500", "red.700")}
               _hover={{ bg: "red.600" }}
               color={"white"}
@@ -107,6 +108,7 @@ const Navbar = () => {
             <Box
               p="2"
               borderRadius="xl"
+              // eslint-disable-next-line react-hooks/rules-of-hooks
               bg={useColorModeValue("red.500", "red.700")}
               _hover={{ bg: "red.600" }}
               color={"white"}

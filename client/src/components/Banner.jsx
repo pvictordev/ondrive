@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
 
 export default function Banner(props) {

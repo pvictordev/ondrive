@@ -1,15 +1,42 @@
-// app.js
-const http = require("http");
+// server.js
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
-const hostname = "localhost";
-const port = 3000;
+const app = express();
+const PORT = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello, Node.js!\n");
+// Middleware
+app.use(bodyParser.json());
+
+// Cors
+app.use(cors());
+
+// Mock user data
+const admin = {
+  email: "admin@mail",
+  password: "admin123",
+};
+
+// Login endpoint
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  // Check if credentials match
+  if (email === admin.email && password === admin.password) {
+    // Successful authentication
+    res.json({
+      success: true,
+      message: "Authentication successful",
+      redirect: "/",
+    });
+  } else {
+    // Authentication failed
+    res.status(401).json({ success: false, message: "Authentication failed" });
+  }
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

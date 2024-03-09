@@ -15,6 +15,9 @@ The Ondrive website is built using the following technologies:
 - **React**
 - **React Router**
 - **Chakra UI**
+- **Node.js**
+- **Express.js**
+- **PostgreSQL**
 
 ## Features
 

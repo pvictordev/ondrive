@@ -13,13 +13,38 @@ import HomeRoute from "../components/HomeRoute";
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isAuthentificated, setIsAuthentificated] = useState(false);
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
+    console.log("Authentificated:", isAuthentificated);
+
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // Authentication successful, redirect to the home page
+          window.location.href = data.redirect;
+          setIsAuthentificated(true);
+        } else {
+          // Authentication failed, handle error
+          console.error("Authentication failed:", data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
+
   return (
     <Box className="Contact">
       <HomeRoute className="Contact__title" title={"Log In"} />
@@ -38,7 +63,7 @@ const LogIn = () => {
           boxShadow="md"
           margin="0 0 15rem 0"
         >
-          <form onSubmit={handleSubmit}>
+          <form method="POST" onSubmit={handleSubmit}>
             <Stack spacing={5}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>

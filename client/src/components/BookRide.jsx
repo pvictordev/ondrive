@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Box,
   Text,
@@ -38,7 +38,6 @@ const BookRide = () => {
   const [selectedCarImage, setSelectedCarImage] = useState("");
   const [showError, setShowError] = useState(false);
 
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setBook({ ...book, [name]: value });
@@ -53,17 +52,16 @@ const BookRide = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      const { car, pickLocation, dropLocation, pickDate, dropDate } = book;
-      if (car && pickLocation && dropLocation && pickDate && dropDate) {
+    const { car, pickLocation, dropLocation, pickDate, dropDate } = book;
+    if (car && pickLocation && dropLocation && pickDate && dropDate) {
+      onOpen();
 
-        onOpen();
+      setShowError(false);
+    } else {
+      onClose();
 
-        setShowError(false);
-      } else {
-        onClose()
-
-        setShowError(true);
-      }
+      setShowError(true);
+    }
   };
 
   const carOptions = CarsList.map((car) => {
@@ -80,7 +78,6 @@ const BookRide = () => {
     return <Image src={car.imageURL} alt={car.name}></Image>;
   });
 
-  
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <Flex
@@ -292,9 +289,7 @@ const BookRide = () => {
               <ModalCloseButton />
             </ModalHeader>
 
-            <ModalBody
-              className="reservation"
-            >
+            <ModalBody className="reservation">
               <form id="new-note" onSubmit={modalSubmit}>
                 <Text
                   fontWeight={"bold"}
@@ -311,7 +306,7 @@ const BookRide = () => {
                 <Box
                   className="reservation__box"
                   display={"grid"}
-                  gridTemplateColumns={{base:'1fr', md: '1fr 1fr'}}
+                  gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
                   gap={"10"}
                   mb={"14"}
                 >
