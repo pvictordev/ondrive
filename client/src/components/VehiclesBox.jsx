@@ -1,14 +1,5 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Container,
-  Heading,
-  Text,
-  Stack,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import CarsList from "../Data/CarsList";
+/* eslint-disable react/prop-types */
+import { Box, Text, Stack, useColorModeValue } from "@chakra-ui/react";
 
 const VehiclesBox = (props) => {
   return (

@@ -74,11 +74,8 @@ const BookRide = () => {
     onClose();
   };
 
-  const carImage = CarsList.map((car) => {
-    return <Image src={car.imageURL} alt={car.name}></Image>;
-  });
-
   const { isOpen, onClose, onOpen } = useDisclosure();
+
   return (
     <Flex
       className="BookRide"
@@ -100,6 +97,7 @@ const BookRide = () => {
       >
         Book ride
       </Text>
+
       {showError && (
         <Text
           className="error"

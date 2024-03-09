@@ -1,44 +1,41 @@
-import React from 'react'
-import {
-    Flex,
-    Circle,
-    Box,
-    Image,
-    Badge,
-    useColorModeValue,
-    Icon,
-    chakra,
-    Tooltip,
-  } from '@chakra-ui/react'
-  import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
-function Rating(props) {
+/* eslint-disable react/prop-types */
 
-    return (
-      <Box display="flex" alignItems="center">
-        {Array(5)
-          .fill('')
-          .map((_, i) => {
-            const roundedRating = Math.round(props.rating * 2) / 2
-            if (roundedRating - i >= 1) {
-              return (
-                <BsStarFill
-                  key={i}
-                  style={{ marginLeft: '1' }}
-                  color={i < props.rating ? 'teal.500' : 'gray.300'}
-                />
-              )
-            }
-            if (roundedRating - i === 0.5) {
-              return <BsStarHalf key={i} style={{ marginLeft: '1' }} />
-            }
-            return <BsStar key={i} style={{ marginLeft: '1' }} />
-          })}
-        <Box as="span" ml="2" color="gray.600" fontSize="sm">
-          {props.numReviews} review{props.numReviews > 1 && 's'}
-        </Box>
+import {
+  Flex,
+  Circle,
+  Box,
+  Image,
+  Badge,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+import { Link } from "react-router-dom";
+function Rating(props) {
+  return (
+    <Box display="flex" alignItems="center">
+      {Array(5)
+        .fill("")
+        .map((_, i) => {
+          const roundedRating = Math.round(props.rating * 2) / 2;
+          if (roundedRating - i >= 1) {
+            return (
+              <BsStarFill
+                key={i}
+                style={{ marginLeft: "1" }}
+                color={i < props.rating ? "teal.500" : "gray.300"}
+              />
+            );
+          }
+          if (roundedRating - i === 0.5) {
+            return <BsStarHalf key={i} style={{ marginLeft: "1" }} />;
+          }
+          return <BsStar key={i} style={{ marginLeft: "1" }} />;
+        })}
+      <Box as="span" ml="2" color="gray.600" fontSize="sm">
+        {props.numReviews} review{props.numReviews > 1 && "s"}
       </Box>
-    )
+    </Box>
+  );
 }
 
 const CarsCard = (props) => {
@@ -75,7 +72,7 @@ const CarsCard = (props) => {
             className="description__badge"
             display="flex"
             alignItems="center"
-            justifyContent={'space-between'}
+            justifyContent={"space-between"}
           >
             {props.isNew && (
               <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
@@ -121,6 +118,6 @@ const CarsCard = (props) => {
       </Box>
     </Flex>
   );
-}
+};
 
-export default CarsCard
+export default CarsCard;

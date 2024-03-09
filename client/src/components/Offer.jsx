@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Box,
   Button,
@@ -16,7 +17,7 @@ import { AiOutlineWifi, AiOutlineFileAdd } from "react-icons/ai";
 import { MdArrowForwardIos } from "react-icons/md";
 import OfferImage from "../images/offer-img.png";
 
-const Card = ({ heading, description, icon, href }) => {
+const Card = ({ heading, description, icon }) => {
   return (
     <Box
       className="Card"
@@ -104,11 +105,12 @@ const Offer = () => {
             color={"gray.600"}
             fontSize={{ base: "md", sm: "lg", lg: "xl" }}
           >
-            Discover the best deals you'll ever find with our unbeatable offers.
-            We're dedicated to providing you with the best value for your money,
-            so you can enjoy top-quality services and products without breaking
-            the bank. Our deals are designed to give you the ultimate renting
-            experience, so don't miss out on your chance to save big.
+            Discover the best deals you&apos;ll ever find with our unbeatable
+            offers. We&apos;re dedicated to providing you with the best value
+            for your money, so you can enjoy top-quality services and products
+            without breaking the bank. Our deals are designed to give you the
+            ultimate renting experience, so don&apos;t miss out on your chance
+            to save big.
           </Text>
           <Box
             display={"flex"}

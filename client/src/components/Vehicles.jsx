@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
   Container,
   Heading,
   Text,
-  Stack,
   Flex,
   Grid,
-  Center,
-  background,
-  useColorModeValue,
   ButtonGroup,
 } from "@chakra-ui/react";
 import CarsList from "../Data/CarsList";
@@ -137,7 +133,6 @@ const Vehicles = () => {
               p={7}
               border={"2px solid red"}
               borderRadius={"3xl"}
-              
             >
               {active == "first" && <VehiclesBox {...CarsList[0]} />}
               {active == "second" && <VehiclesBox {...CarsList[1]} />}

@@ -1,19 +1,15 @@
-import React from "react";
 import {
   Box,
-  chakra,
   Container,
   SimpleGrid,
   Stack,
   Text,
-  VisuallyHidden,
   Input,
   IconButton,
   useColorModeValue,
   Image,
   Center,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 import Logo from "../images/ondrive.png";

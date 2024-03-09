@@ -1,20 +1,17 @@
-import React from 'react'
 import {
   Container,
   Stack,
   Flex,
-  Box,
   Heading,
   Text,
   Button,
   Image,
   useColorModeValue,
   Link,
-} from '@chakra-ui/react'
-import HeroImage from '../images/car.png'
+} from "@chakra-ui/react";
+import HeroImage from "../images/car.png";
 
 export default function Hero() {
-
   return (
     <Container className="Hero" maxW={"7xl"} p={{ base: "5", md: "12" }}>
       <Stack
@@ -77,7 +74,9 @@ export default function Hero() {
               bg={useColorModeValue("red.500", "red.700")}
               _hover={{ bg: "red.600" }}
             >
-              <Link style={{textDecoration:"none"}} href="#bookRide">Book ride</Link>
+              <Link style={{ textDecoration: "none" }} href="#bookRide">
+                Book ride
+              </Link>
             </Button>
             <Button rounded={"full"} size={"lg"} fontWeight={"normal"} px={6}>
               Learn more
@@ -104,8 +103,3 @@ export default function Hero() {
     </Container>
   );
 }
-
-
-
-
-
