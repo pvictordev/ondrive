@@ -47,7 +47,7 @@ const BlogAuthor = (props) => {
 
 const Blog = () => {
   return (
-    <Box>
+    <Box pt={24}>
       <HomeRoute className="Blog__title" title={"Blog"} />
       <Container className="Blog__container" maxW={"7xl"} p="12">
         <Heading className="container__header" as="h1">

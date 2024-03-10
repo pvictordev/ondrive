@@ -10,7 +10,7 @@ const Team = () => {
     return <TeamCard className="Team__card" key={member.id} {...member} />;
   });
   return (
-    <Box className="Team">
+    <Box className="Team" pt={24}>
       <HomeRoute className="Team__title" title={"Team"} />
       <Grid
         className="Team__container"

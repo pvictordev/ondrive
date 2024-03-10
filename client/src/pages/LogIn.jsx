@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from "react";
 import {
   Container,
   Box,
@@ -10,10 +11,9 @@ import {
 } from "@chakra-ui/react";
 import HomeRoute from "../components/HomeRoute";
 
-const LogIn = () => {
+const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isAuthentificated, setIsAuthentificated] = useState(false);
 
   // Handle form submission
   const handleSubmit = (e) => {
@@ -44,6 +44,13 @@ const LogIn = () => {
         console.error("Error:", error);
       });
   };
+
+  useEffect(() => {
+    localStorage.setItem(
+      "isAuthentificated",
+      JSON.stringify(isAuthentificated)
+    );
+  }, [isAuthentificated]);
 
   return (
     <Box className="Contact">

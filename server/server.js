@@ -15,7 +15,7 @@ app.use(cors());
 // Mock user data
 const admin = {
   email: "admin@mail",
-  password: "admin123",
+  password: "123",
 };
 
 // Login endpoint

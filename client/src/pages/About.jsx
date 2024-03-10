@@ -38,7 +38,7 @@ const Feature = ({ text, icon, iconBg }) => {
 
 const About = () => {
   return (
-    <Box className="About">
+    <Box className="About" pt={24}>
       <HomeRoute className="About__title" title={"About"} />
 
       <Container className="About__container" maxW={"5xl"} my={24}>

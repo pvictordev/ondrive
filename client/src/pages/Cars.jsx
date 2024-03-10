@@ -12,7 +12,7 @@ const Cars = () => {
   });
   // const [isLargerThanMobile] = useMediaQuery('(min-width: 890px)')
   return (
-    <Box className="Cars">
+    <Box className="Cars" pt={24}>
       <HomeRoute className="Cars__title" title={"Cars"} />
 
       <Grid
@@ -29,7 +29,6 @@ const Cars = () => {
         }}
         rowGap={10}
         columnGap={0}
-        // p={50}
       >
         {cars}
       </Grid>

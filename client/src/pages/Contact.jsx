@@ -27,7 +27,7 @@ import RentSteps from "../components/RentSteps";
 
 const Contact = () => {
   return (
-    <Box className="Contact">
+    <Box className="Contact" pt={24}>
       <HomeRoute className="Contact__title" title={"Contact"} />
 
       <Container

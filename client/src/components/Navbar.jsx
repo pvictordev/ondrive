@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React, { useEffect } from "react";
 import {
   Box,
   HStack,
@@ -25,7 +26,7 @@ import { Link } from "react-router-dom";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
 import Logo from "../images/ondrive.png";
 
-const Navbar = () => {
+const Navbar = ({ isAuthentificated }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const [isLargerThanMobile] = useMediaQuery("(min-width: 890px)");
@@ -40,8 +41,24 @@ const Navbar = () => {
     setIsDrawerOpen(false);
   };
 
+  useEffect(() => {
+    localStorage.setItem(
+      "isAuthentificated",
+      JSON.stringify(isAuthentificated)
+    );
+  }, [isAuthentificated]);
+
   return (
-    <Flex align="center" py={5} px={{ base: 2, sm: "7" }}>
+    <Flex
+      align="center"
+      py={5}
+      px={{ base: 2, sm: "7" }}
+      position={"fixed"}
+      top={0}
+      width={"full"}
+      zIndex={10}
+      bg={useColorModeValue("white", "var(--chakra-colors-chakra-body-bg)")}
+    >
       <Center>
         <Image
           display={{ base: "none", sm: "block" }}
@@ -87,37 +104,52 @@ const Navbar = () => {
           <Spacer />
 
           <HStack>
-            <Box
-              p="2"
-              borderColor={""}
-              borderRadius="xl"
-              // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue("red.500", "red.700")}
-              _hover={{ bg: "red.600" }}
-              color={"white"}
-              cursor={"pointer"}
-            >
-              <Link
-                to={"/signin"}
-                borderRadius="xl"
-                style={{ textDecoration: "none" }}
-              >
-                Sign in
-              </Link>
-            </Box>
-            <Box
-              p="2"
-              borderRadius="xl"
-              // eslint-disable-next-line react-hooks/rules-of-hooks
-              bg={useColorModeValue("red.500", "red.700")}
-              _hover={{ bg: "red.600" }}
-              color={"white"}
-              cursor={"pointer"}
-            >
-              <Link to={"/login"} style={{ textDecoration: "none" }}>
-                Log in{" "}
-              </Link>
-            </Box>
+            {isAuthentificated ? (
+              <Box p="2">
+                <Image
+                  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="User Profile Picture"
+                  boxSize="34px"
+                  borderRadius={"full"}
+                  cursor={"pointer"}
+                />
+              </Box>
+            ) : (
+              <>
+                <Box
+                  p="2"
+                  borderColor={""}
+                  borderRadius="xl"
+                  // eslint-disable-next-line react-hooks/rules-of-hooks
+                  bg={useColorModeValue("red.500", "red.700")}
+                  _hover={{ bg: "red.600" }}
+                  color={"white"}
+                  cursor={"pointer"}
+                >
+                  <Link
+                    to={"/signin"}
+                    borderRadius="xl"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Sign in
+                  </Link>
+                </Box>
+                <Box
+                  p="2"
+                  borderRadius="xl"
+                  // eslint-disable-next-line react-hooks/rules-of-hooks
+                  bg={useColorModeValue("red.500", "red.700")}
+                  _hover={{ bg: "red.600" }}
+                  color={"white"}
+                  cursor={"pointer"}
+                >
+                  <Link to={"/login"} style={{ textDecoration: "none" }}>
+                    Log in{" "}
+                  </Link>
+                </Box>
+              </>
+            )}
+
             <Box p="2">
               <Button onClick={toggleColorMode}>
                 {" "}

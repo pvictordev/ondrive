@@ -18,7 +18,8 @@ export default function Hero() {
         className="Hero__container"
         align={"center"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 5, md: 23 }}
+        pt={{ base: 24 }}
+        pb={{ base: 5, md: 23 }}
         direction={{ base: "column", md: "row" }}
       >
         <Stack
