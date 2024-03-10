@@ -31,7 +31,7 @@ const Contact = () => {
       <HomeRoute className="Contact__title" title={"Contact"} />
 
       <Container
-        className="Contanct__container"
+        className="Contact__container"
         maxW="full"
         centerContent
         overflow="hidden"

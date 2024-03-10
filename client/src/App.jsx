@@ -18,11 +18,15 @@ function App() {
     return storedValue ? JSON.parse(storedValue) : false;
   });
 
+  const handleAuthToggle = () => {
+    setIsAuthentificated((prevIsAuth) => !prevIsAuth);
+  };
+
   return (
     <>
       <Navbar
         isAuthentificated={isAuthentificated}
-        setIsAuthentificated={setIsAuthentificated}
+        handleAuthToggle={handleAuthToggle}
       />
       <Routes>
         <Route path="/" element={<Home />} />

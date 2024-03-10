@@ -53,11 +53,11 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
   }, [isAuthentificated]);
 
   return (
-    <Box className="Contact">
-      <HomeRoute className="Contact__title" title={"Log In"} />
+    <Box className="Login" pt={24}>
+      <HomeRoute className="Login__title" title={"Log In"} />
 
       <Container
-        className="Contanct__container"
+        className="Login__container"
         maxW="full"
         centerContent
         overflow="hidden"

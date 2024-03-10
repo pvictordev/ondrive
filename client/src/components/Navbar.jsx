@@ -26,7 +26,7 @@ import { Link } from "react-router-dom";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
 import Logo from "../images/ondrive.png";
 
-const Navbar = ({ isAuthentificated }) => {
+const Navbar = ({ isAuthentificated, handleAuthToggle }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const [isLargerThanMobile] = useMediaQuery("(min-width: 890px)");
@@ -106,13 +106,21 @@ const Navbar = ({ isAuthentificated }) => {
           <HStack>
             {isAuthentificated ? (
               <Box p="2">
-                <Image
+                {/* <Image
                   src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="User Profile Picture"
                   boxSize="34px"
                   borderRadius={"full"}
                   cursor={"pointer"}
-                />
+                  onClick={() => handleAuthToggle()}
+                /> */}
+                <Button
+                  borderRadius={"full"}
+                  cursor={"pointer"}
+                  onClick={() => handleAuthToggle()}
+                >
+                  Log Out
+                </Button>
               </Box>
             ) : (
               <>

@@ -9,7 +9,6 @@ const PORT = 3000;
 // Middleware
 app.use(bodyParser.json());
 
-// Cors
 app.use(cors());
 
 // Mock user data
@@ -17,6 +16,13 @@ const admin = {
   email: "admin@mail",
   password: "123",
 };
+
+// const users = [
+//   {
+//     email: "admin@mail",
+//     password: "123",
+//   },
+// ];
 
 // Login endpoint
 app.post("/login", (req, res) => {

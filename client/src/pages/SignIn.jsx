@@ -24,11 +24,11 @@ const SignIn = () => {
   };
 
   return (
-    <Box className="Contact">
-      <HomeRoute className="Contact__title" title={"Sign In"} />
+    <Box className="Signin" pt={24}>
+      <HomeRoute className="Signin__title" title={"Sign In"} />
 
       <Container
-        className="Contanct__container"
+        className="Signin__container"
         maxW="full"
         centerContent
         overflow="hidden"
