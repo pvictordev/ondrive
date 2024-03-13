@@ -42,6 +42,24 @@ app.post("/login", (req, res) => {
   }
 });
 
+// sign in endpoint
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  // Check if credentials match
+  if (email === admin.email && password === admin.password) {
+    // Successful authentication
+    res.json({
+      success: true,
+      message: "Authentication successful",
+      redirect: "/",
+    });
+  } else {
+    // Authentication failed
+    res.status(401).json({ success: false, message: "Authentication failed" });
+  }
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

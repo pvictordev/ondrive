@@ -17,7 +17,7 @@ The Ondrive website is built using the following technologies:
 - **Chakra UI**
 - **Node.js**
 - **Express.js**
-- **PostgreSQL**
+- **MongoDB**
 
 ## Features
 
