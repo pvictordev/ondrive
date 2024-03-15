@@ -203,6 +203,11 @@ const Navbar = ({ isAuthentificated, handleAuthToggle }) => {
                     <ListItem>
                       <Link to="/contact">Contact</Link>
                     </ListItem>
+                    <ListItem>
+                      <Link color="" to="/signin">
+                        Sign In
+                      </Link>
+                    </ListItem>
                   </List>
                 </DrawerBody>
               </DrawerContent>

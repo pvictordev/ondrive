@@ -45,6 +45,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
       });
   };
 
+  // show user auth status
   useEffect(() => {
     localStorage.setItem(
       "isAuthentificated",
@@ -70,7 +71,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
           boxShadow="md"
           margin="0 0 15rem 0"
         >
-          <form method="POST" onSubmit={handleSubmit}>
+          <form method="GET" onSubmit={handleSubmit}>
             <Stack spacing={5}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>

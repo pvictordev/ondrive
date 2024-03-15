@@ -8,6 +8,8 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+
 import HomeRoute from "../components/HomeRoute";
 
 const SignIn = () => {
@@ -21,6 +23,23 @@ const SignIn = () => {
     console.log("Full Name:", fullName);
     console.log("Email:", email);
     console.log("Password:", password);
+
+    fetch("http://localhost:3000/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ fullName, email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          window.location.href = data.redirect;
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -74,6 +93,7 @@ const SignIn = () => {
                   required
                 />
               </FormControl>
+              <Link to="/login">Already have an account ? </Link>
               <Button type="submit" colorScheme="red">
                 Sign In
               </Button>

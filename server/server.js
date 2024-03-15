@@ -11,25 +11,30 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-// Mock user data
-const admin = {
-  email: "admin@mail",
-  password: "123",
-};
+let users = [];
 
-// const users = [
-//   {
-//     email: "admin@mail",
-//     password: "123",
-//   },
-// ];
+// Sign in endpoint
+app.post("/signin", (req, res) => {
+  const { fullName, email, password } = req.body;
+  users.push({ fullName, email, password });
+  res.json({
+    users: users,
+    success: true,
+    message: "user created successful",
+    redirect: "/login",
+  });
+});
 
 // Login endpoint
-app.post("/login", (req, res) => {
+app.get("/login", (req, res) => {
   const { email, password } = req.body;
 
   // Check if credentials match
-  if (email === admin.email && password === admin.password) {
+  const user = users.find(
+    (user) => user.email === email && user.password === password
+  );
+
+  if (user) {
     // Successful authentication
     res.json({
       success: true,
@@ -42,23 +47,7 @@ app.post("/login", (req, res) => {
   }
 });
 
-// sign in endpoint
-// app.post("/login", (req, res) => {
-//   const { email, password } = req.body;
-
-//   // Check if credentials match
-//   if (email === admin.email && password === admin.password) {
-//     // Successful authentication
-//     res.json({
-//       success: true,
-//       message: "Authentication successful",
-//       redirect: "/",
-//     });
-//   } else {
-//     // Authentication failed
-//     res.status(401).json({ success: false, message: "Authentication failed" });
-//   }
-// });
+console.log(users);
 
 // Start server
 app.listen(PORT, () => {
