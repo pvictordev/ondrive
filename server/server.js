@@ -53,8 +53,32 @@ app.post("/signin", async (req, res) => {
 });
 
 // Login endpoint
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    // compare passwords
+    if (user.password !== password) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    // success
+    //res.status(200).json({ message: "Login successful" });
+    res.status(200).json({
+      success: true,
+      message: "Login Successfull",
+      redirect: "/",
+    });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
 // Start server

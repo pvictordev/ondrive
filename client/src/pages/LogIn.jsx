@@ -12,15 +12,18 @@ import {
 import HomeRoute from "../components/HomeRoute";
 
 const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Authentificated:", isAuthentificated);
 
     const url = "http://localhost:3000/login";
     const options = {
@@ -28,29 +31,29 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(formData),
     };
 
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.success) {
-          // Authentication successful, redirect to the home page
-          window.location.href = data.redirect;
-          setIsAuthentificated(true);
-        } else {
-          // Authentication failed, handle error
-          console.error("Authentication failed:", data.message);
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    try {
+      const response = await fetch(url, options);
+
+      if (!response.ok) {
+        console.log("Incorrect credentials");
+      }
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Authentication successful, redirect to the home page
+        window.location.href = data.redirect;
+        setIsAuthentificated(true);
+      } else {
+        // Authentication failed, handle error
+        console.error("Authentication failed:", data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   // show user authorization status
@@ -85,8 +88,9 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
                 <FormLabel>Email address</FormLabel>
                 <Input
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Enter your email"
                   required
                 />
@@ -95,8 +99,9 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
                 <FormLabel>Password</FormLabel>
                 <Input
                   type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="Enter your password"
                   required
                 />
