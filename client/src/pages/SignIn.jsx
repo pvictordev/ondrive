@@ -9,37 +9,43 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
 import HomeRoute from "../components/HomeRoute";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Full Name:", fullName);
-    console.log("Email:", email);
-    console.log("Password:", password);
 
-    fetch("http://localhost:3000/signin", {
+    const url = "http://localhost:3000/signin";
+
+    const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ fullName, email, password }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          window.location.href = data.redirect;
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+      body: JSON.stringify(formData),
+    };
+
+    try {
+      const response = await fetch(url, options);
+      if (response.ok) {
+        console.log("Data sent successfully!");
+      } else {
+        console.error("Failed to send data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -60,14 +66,15 @@ const SignIn = () => {
           boxShadow="md"
           margin="0 0 15rem 0"
         >
-          <form onSubmit={handleSubmit}>
+          <form method="POST" onSubmit={handleSubmit}>
             <Stack spacing={5}>
               <FormControl id="fullName">
                 <FormLabel>Full Name</FormLabel>
                 <Input
                   type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
                   placeholder="Enter your full name"
                   required
                 />
@@ -77,8 +84,9 @@ const SignIn = () => {
                 <FormLabel>Email address</FormLabel>
                 <Input
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Enter your email"
                   required
                 />
@@ -87,8 +95,9 @@ const SignIn = () => {
                 <FormLabel>Create Password</FormLabel>
                 <Input
                   type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="Create your password"
                   required
                 />

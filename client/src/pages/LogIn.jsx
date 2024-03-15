@@ -22,14 +22,22 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
     console.log("Password:", password);
     console.log("Authentificated:", isAuthentificated);
 
-    fetch("http://localhost:3000/login", {
+    const url = "http://localhost:3000/login";
+    const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
-    })
-      .then((response) => response.json())
+    };
+
+    fetch(url, options)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => {
         if (data.success) {
           // Authentication successful, redirect to the home page
@@ -45,7 +53,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
       });
   };
 
-  // show user auth status
+  // show user authorization status
   useEffect(() => {
     localStorage.setItem(
       "isAuthentificated",
@@ -71,7 +79,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
           boxShadow="md"
           margin="0 0 15rem 0"
         >
-          <form method="GET" onSubmit={handleSubmit}>
+          <form method="POST" onSubmit={handleSubmit}>
             <Stack spacing={5}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
