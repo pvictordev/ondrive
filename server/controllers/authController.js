@@ -1,7 +1,7 @@
 // authController.js
 const User = require("../models/userModel");
 
-exports.signup = async (req, res) => {
+exports.signin = async (req, res) => {
   try {
     const { fullName, email, password } = req.body;
     const user = new User({ fullName, email, password });
