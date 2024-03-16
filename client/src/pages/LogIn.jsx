@@ -44,7 +44,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
       const response = await fetch(url, options);
 
       if (!response.ok) {
-        console.log("Incorrect credentials");
+        alert("Incorrect credentials");
       }
 
       const data = await response.json();
@@ -73,52 +73,6 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
   return (
     <Box className="Login" pt={24}>
       <HomeRoute className="Login__title" title={"Log In"} />
-
-      {/* <Container
-        className="Login__container"
-        maxW="full"
-        centerContent
-        overflow="hidden"
-      >
-        <Box
-          maxW={""}
-          p="6"
-          borderWidth="1px"
-          borderRadius="md"
-          boxShadow="md"
-          margin="0 0 15rem 0"
-        >
-          <form method="POST" onSubmit={handleSubmit}>
-            <Stack spacing={5}>
-              <FormControl id="email">
-                <FormLabel>Email address</FormLabel>
-                <Input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  required
-                />
-              </FormControl>
-              <FormControl id="password">
-                <FormLabel>Password</FormLabel>
-                <Input
-                  type="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  placeholder="Enter your password"
-                  required
-                />
-              </FormControl>
-              <Button type="submit" colorScheme="red">
-                Sign In
-              </Button>
-            </Stack>
-          </form>
-        </Box>
-      </Container> */}
 
       <Flex minH={"100vh"}>
         <Stack spacing={8} mx={"auto"} maxW={"lg"} pb={12} px={6}>
@@ -168,7 +122,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            fill="#ffff"
+                            fill="#ff0000"
                             width="25px"
                             height="25px"
                             viewBox="0 0 32 32"
@@ -182,7 +136,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            fill="#000000"
+                            fill="#ff0000"
                             width="25px"
                             height="25px"
                             viewBox="0 0 32 32"
@@ -208,7 +162,7 @@ const LogIn = ({ isAuthentificated, setIsAuthentificated }) => {
                     bg: "red.500",
                   }}
                 >
-                  Sign up
+                  Log In
                 </Button>
               </Stack>
             </Stack>

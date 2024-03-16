@@ -130,9 +130,9 @@ const Vehicles = () => {
 
             <Box
               className="pick-box__car"
-              p={7}
-              border={"2px solid red"}
-              borderRadius={"3xl"}
+              // p={7}
+              // border={"2px solid red"}
+              // borderRadius={"3xl"}
             >
               {active == "first" && <VehiclesBox {...CarsList[0]} />}
               {active == "second" && <VehiclesBox {...CarsList[1]} />}

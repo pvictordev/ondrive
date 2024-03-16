@@ -45,8 +45,6 @@ const BookRide = () => {
     const selectedCar = CarsList.find((car) => car.name === value);
     if (selectedCar) {
       setSelectedCarImage(selectedCar.imageURL);
-    } else {
-      setSelectedCarImage("");
     }
   };
 
@@ -389,7 +387,7 @@ const BookRide = () => {
                   </Flex>
 
                   <Box className="reservation__car">
-                    <Text>
+                    <Text pb={2}>
                       Car -{" "}
                       <Text as={"span"} color={"red.500"}>
                         {" "}

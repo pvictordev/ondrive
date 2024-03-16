@@ -92,6 +92,8 @@ const SignIn = () => {
                   <FormControl
                     onSubmit={handleSubmit}
                     id="firstName"
+                    name="fullName"
+                    value={formData.fullName}
                     isRequired
                   >
                     <FormLabel>First Name</FormLabel>
@@ -140,7 +142,7 @@ const SignIn = () => {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            fill="#ffff"
+                            fill="#ff0000"
                             width="25px"
                             height="25px"
                             viewBox="0 0 32 32"
@@ -154,7 +156,7 @@ const SignIn = () => {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            fill="#000000"
+                            fill="#ff0000"
                             width="25px"
                             height="25px"
                             viewBox="0 0 32 32"
@@ -180,7 +182,7 @@ const SignIn = () => {
                     bg: "red.500",
                   }}
                 >
-                  Sign up
+                  Sign In
                 </Button>
               </Stack>
 

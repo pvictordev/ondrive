@@ -4,54 +4,76 @@ import { Box, Text, Stack, useColorModeValue } from "@chakra-ui/react";
 const VehiclesBox = (props) => {
   return (
     <Box>
-      <Stack direction="column" fontSize={"md"}>
+      <Stack direction="column" fontSize={"md"} spacing={4}>
         <Text
-          borderRadius={"3xl"}
+          borderRadius={"lg"}
           bg={useColorModeValue("red.500", "red.700")}
           color={"white"}
           textAlign={"center"}
-          p={"1"}
+          p={"1.5"}
           fontSize={"lg"}
-          mb={"3"}
         >
           ${props.price}/ Per day
         </Text>
-        <Text>
-          <Text as={"span"} color={"red.500"}>
-            Model:
-          </Text>{" "}
-          {props.model}
+
+        <Text
+          borderRadius={"lg"}
+          bg={useColorModeValue("red.500", "red.700")}
+          color={"white"}
+          fontSize={"lg"}
+          p={"1.5"}
+        >
+          Model: {props.model}
         </Text>
-        <Text>
-          {" "}
-          <Text as={"span"} color={"red.500"}>
-            Brand:
-          </Text>{" "}
-          {props.mark}
+
+        <Text
+          borderRadius={"lg"}
+          bg={useColorModeValue("red.500", "red.700")}
+          color={"white"}
+          p={"1.5"}
+          fontSize={"lg"}
+        >
+          Brand: {props.mark}
         </Text>
-        <Text>
-          <Text as={"span"} color={"red.500"}>
-            Year:
-          </Text>{" "}
-          {props.year}
+
+        <Text
+          borderRadius={"lg"}
+          bg={useColorModeValue("red.500", "red.700")}
+          color={"white"}
+          p={"1.5"}
+          fontSize={"lg"}
+        >
+          Year: {props.year}
         </Text>
-        <Text>
-          <Text as={"span"} color={"red.500"}>
-            Doors:
-          </Text>{" "}
-          {props.doors}
+
+        <Text
+          borderRadius={"lg"}
+          bg={useColorModeValue("red.500", "red.700")}
+          color={"white"}
+          p={"1.5"}
+          fontSize={"lg"}
+        >
+          Doors: {props.doors}
         </Text>
-        <Text>
-          <Text as={"span"} color={"red.500"}>
-            Transmission:
-          </Text>{" "}
-          {props.transmission}
+
+        <Text
+          borderRadius={"lg"}
+          bg={useColorModeValue("red.500", "red.700")}
+          color={"white"}
+          p={"1.5"}
+          fontSize={"lg"}
+        >
+          Transmission: {props.transmission}
         </Text>
-        <Text>
-          <Text as={"span"} color={"red.500"}>
-            Fuel:
-          </Text>{" "}
-          {props.fuel}
+
+        <Text
+          borderRadius={"lg"}
+          bg={useColorModeValue("red.500", "red.700")}
+          color={"white"}
+          p={"1"}
+          fontSize={"lg"}
+        >
+          Fuel: {props.fuel}
         </Text>
       </Stack>
     </Box>
