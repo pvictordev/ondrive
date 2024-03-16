@@ -16,38 +16,38 @@ const VehiclesBox = (props) => {
         >
           ${props.price}/ Per day
         </Text>
-        <Text borderBottom={"2px solid red"}>
+        <Text>
           <Text as={"span"} color={"red.500"}>
             Model:
           </Text>{" "}
           {props.model}
         </Text>
-        <Text borderBottom={"2px solid red"}>
+        <Text>
           {" "}
           <Text as={"span"} color={"red.500"}>
             Brand:
           </Text>{" "}
           {props.mark}
         </Text>
-        <Text borderBottom={"2px solid red"}>
+        <Text>
           <Text as={"span"} color={"red.500"}>
             Year:
           </Text>{" "}
           {props.year}
         </Text>
-        <Text borderBottom={"2px solid red"}>
+        <Text>
           <Text as={"span"} color={"red.500"}>
             Doors:
           </Text>{" "}
           {props.doors}
         </Text>
-        <Text borderBottom={"2px solid red"}>
+        <Text>
           <Text as={"span"} color={"red.500"}>
             Transmission:
           </Text>{" "}
           {props.transmission}
         </Text>
-        <Text borderBottom={"2px solid red"}>
+        <Text>
           <Text as={"span"} color={"red.500"}>
             Fuel:
           </Text>{" "}

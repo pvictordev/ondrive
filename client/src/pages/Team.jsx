@@ -16,8 +16,9 @@ const Team = () => {
         className="Team__container"
         templateColumns={{
           base: "1fr",
-          lg: "repeat(2, 1fr)",
-          xl: "repeat(3, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+          xl: "repeat(4, 1fr)",
         }}
         templateRows={{
           base: "repeat(6, 1fr)",

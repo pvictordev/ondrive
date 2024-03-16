@@ -2,7 +2,6 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const app = express();
 
 // mongodb config
@@ -14,11 +13,15 @@ mongoose
 // mongodb schema
 const Schema = mongoose.Schema;
 
+// user schema
 const userSchema = new Schema({
   fullName: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
 });
+
+// create a unique index
+userSchema.index({ email: 1 }, { unique: true });
 
 // create a collection
 const User = mongoose.model("users", userSchema);
@@ -44,7 +47,7 @@ app.post("/signin", async (req, res) => {
     res.status(201).json({
       message: "User created successfully",
       success: true,
-      //redirect: "/login",
+      redirect: "/login",
     });
   } catch (error) {
     console.error("Error", error);
