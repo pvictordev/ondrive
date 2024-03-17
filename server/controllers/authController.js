@@ -21,9 +21,21 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
+
+    //  basic validation
     if (!user || user.password !== password) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
+
+    // admin validation
+    if (email === "admin@mail" && password === "admin1234") {
+      res.status(200).json({
+        success: true,
+        message: "Login Successful",
+        redirect: "/admin",
+      });
+    }
+
     res.status(200).json({
       success: true,
       message: "Login Successful",

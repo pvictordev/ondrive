@@ -10,6 +10,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import SignIn from "./pages/SignIn";
 import LogIn from "./pages/LogIn";
+import Admin from "./pages/Admin";
 
 function App() {
   // is loged in
@@ -46,6 +47,7 @@ function App() {
             />
           }
         />
+        <Route path="admin" element={<Admin />} />
       </Routes>
       <Footer />
     </>

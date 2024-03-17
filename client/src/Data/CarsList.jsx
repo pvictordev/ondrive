@@ -41,7 +41,7 @@ export default [
     imagePNG: "src/images/bmw.png",
     name: "BMW 5 Series",
     model: "BMW",
-    mark: "5 Series Coupe",
+    mark: "5 Series",
     transmission: "Automatic",
     fuel: "Diesel",
     doors: 4,

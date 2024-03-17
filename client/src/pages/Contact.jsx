@@ -37,14 +37,7 @@ const Contact = () => {
         overflow="hidden"
       >
         <Flex className="container__form ">
-          {/* <div>need additional info?</div> */}
-          {/* <Box>
-          <Heading>Need Additional Info ?</Heading>
-          <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate blanditiis animi deleniti dignissimos maiores maxime hic perspiciatis sed, incidunt reprehenderit eum a similique ullam nulla aperiam illum enim porro ex?</Text>
-        </Box> */}
-
           <Box
-            // bg='white'
             bg={useColorModeValue("white", "gray.700")}
             color="black"
             borderRadius="lg"
@@ -189,7 +182,7 @@ const Contact = () => {
         className="Contact__banner"
         title="Do not be shy !"
         textColor="Contact"
-        description="us for any questions via email, facebbok or whatsapp"
+        description="us for any questions via email, facebook or whatsapp"
       />
 
       <RentSteps className="Contact__steps" />
