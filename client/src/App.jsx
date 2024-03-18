@@ -47,6 +47,7 @@ function App() {
             />
           }
         />
+        {/* //admin */}
         <Route path="admin" element={<Admin />} />
       </Routes>
       <Footer />
